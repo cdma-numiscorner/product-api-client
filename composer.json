@@ -1,6 +1,6 @@
 {
-    "name": "GIT_USER_ID/GIT_REPO_ID",
-    "description": "# Authentication  <!-- ReDoc-Inject: <security-definitions> -->",
+    "name": "cdma-numiscorner/product-api-client",
+    "description": "Use the Product API to export products.",
     "keywords": [
         "openapitools",
         "openapi-generator",
