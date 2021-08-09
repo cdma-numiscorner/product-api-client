@@ -1,0 +1,1648 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "",
+    "description": "# Authentication\n\n<!-- ReDoc-Inject: <security-definitions> -->",
+    "version": "0.0.0"
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/api/categories": {
+      "get": {
+        "operationId": "getCategoriesCollection",
+        "tags": [
+          "Categories"
+        ],
+        "responses": {
+          "200": {
+            "description": "Categories collection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Categories-Read"
+                  }
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Categories-Read"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Retrieves the collection of Categories resources.",
+        "description": "Retrieves the collection of Categories resources.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The collection page number",
+            "required": false,
+            "deprecated": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            },
+            "style": "form",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "deprecated": false
+      },
+      "post": {
+        "operationId": "postCategoriesCollection",
+        "tags": [
+          "Categories"
+        ],
+        "responses": {
+          "201": {
+            "description": "Categories resource created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Categories-Read"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Categories-Read"
+                }
+              }
+            },
+            "links": {
+              "GetCategoriesItem": {
+                "operationId": "getCategoriesItem",
+                "parameters": {
+                  "id": "$response.body#/id"
+                },
+                "description": "The `id` value returned in the response can be used as the `id` parameter in `GET /api/categories/{id}`."
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "422": {
+            "description": "Unprocessable entity"
+          }
+        },
+        "summary": "Creates a Categories resource.",
+        "description": "Creates a Categories resource.",
+        "parameters": [],
+        "requestBody": {
+          "description": "The new Categories resource",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Categories-Write"
+              }
+            },
+            "text/html": {
+              "schema": {
+                "$ref": "#/components/schemas/Categories-Write"
+              }
+            }
+          },
+          "required": true
+        },
+        "deprecated": false
+      },
+      "parameters": []
+    },
+    "/api/categories/{id}": {
+      "get": {
+        "operationId": "getCategoriesItem",
+        "tags": [
+          "Categories"
+        ],
+        "responses": {
+          "200": {
+            "description": "Categories resource",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Categories-Read"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Categories-Read"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        },
+        "summary": "Retrieves a Categories resource.",
+        "description": "Retrieves a Categories resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Resource identifier",
+            "required": true,
+            "deprecated": false,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "deprecated": false
+      },
+      "put": {
+        "operationId": "putCategoriesItem",
+        "tags": [
+          "Categories"
+        ],
+        "responses": {
+          "200": {
+            "description": "Categories resource updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Categories-Read"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Categories-Read"
+                }
+              }
+            },
+            "links": {
+              "GetCategoriesItem": {
+                "operationId": "getCategoriesItem",
+                "parameters": {
+                  "id": "$response.body#/id"
+                },
+                "description": "The `id` value returned in the response can be used as the `id` parameter in `GET /api/categories/{id}`."
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "422": {
+            "description": "Unprocessable entity"
+          }
+        },
+        "summary": "Replaces the Categories resource.",
+        "description": "Replaces the Categories resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Resource identifier",
+            "required": true,
+            "deprecated": false,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "requestBody": {
+          "description": "The updated Categories resource",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Categories-Write"
+              }
+            },
+            "text/html": {
+              "schema": {
+                "$ref": "#/components/schemas/Categories-Write"
+              }
+            }
+          },
+          "required": true
+        },
+        "deprecated": false
+      },
+      "parameters": []
+    },
+    "/api/characteristics": {
+      "get": {
+        "operationId": "getCharacteristicCollection",
+        "tags": [
+          "Characteristic"
+        ],
+        "responses": {
+          "200": {
+            "description": "Characteristic collection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Characteristic-Read"
+                  }
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Characteristic-Read"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Retrieves the collection of Characteristic resources.",
+        "description": "Retrieves the collection of Characteristic resources.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The collection page number",
+            "required": false,
+            "deprecated": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            },
+            "style": "form",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "deprecated": false
+      },
+      "post": {
+        "operationId": "postCharacteristicCollection",
+        "tags": [
+          "Characteristic"
+        ],
+        "responses": {
+          "201": {
+            "description": "Characteristic resource created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Characteristic-Read"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Characteristic-Read"
+                }
+              }
+            },
+            "links": {
+              "GetCharacteristicItem": {
+                "operationId": "getCharacteristicItem",
+                "parameters": {
+                  "id": "$response.body#/id"
+                },
+                "description": "The `id` value returned in the response can be used as the `id` parameter in `GET /api/characteristics/{id}`."
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "422": {
+            "description": "Unprocessable entity"
+          }
+        },
+        "summary": "Creates a Characteristic resource.",
+        "description": "Creates a Characteristic resource.",
+        "parameters": [],
+        "requestBody": {
+          "description": "The new Characteristic resource",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Characteristic-Write"
+              }
+            },
+            "text/html": {
+              "schema": {
+                "$ref": "#/components/schemas/Characteristic-Write"
+              }
+            }
+          },
+          "required": true
+        },
+        "deprecated": false
+      },
+      "parameters": []
+    },
+    "/api/characteristics/{id}": {
+      "get": {
+        "operationId": "getCharacteristicItem",
+        "tags": [
+          "Characteristic"
+        ],
+        "responses": {
+          "200": {
+            "description": "Characteristic resource",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Characteristic-Read"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Characteristic-Read"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        },
+        "summary": "Retrieves a Characteristic resource.",
+        "description": "Retrieves a Characteristic resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Resource identifier",
+            "required": true,
+            "deprecated": false,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "deprecated": false
+      },
+      "put": {
+        "operationId": "putCharacteristicItem",
+        "tags": [
+          "Characteristic"
+        ],
+        "responses": {
+          "200": {
+            "description": "Characteristic resource updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Characteristic-Read"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Characteristic-Read"
+                }
+              }
+            },
+            "links": {
+              "GetCharacteristicItem": {
+                "operationId": "getCharacteristicItem",
+                "parameters": {
+                  "id": "$response.body#/id"
+                },
+                "description": "The `id` value returned in the response can be used as the `id` parameter in `GET /api/characteristics/{id}`."
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "422": {
+            "description": "Unprocessable entity"
+          }
+        },
+        "summary": "Replaces the Characteristic resource.",
+        "description": "Replaces the Characteristic resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Resource identifier",
+            "required": true,
+            "deprecated": false,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "requestBody": {
+          "description": "The updated Characteristic resource",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Characteristic-Write"
+              }
+            },
+            "text/html": {
+              "schema": {
+                "$ref": "#/components/schemas/Characteristic-Write"
+              }
+            }
+          },
+          "required": true
+        },
+        "deprecated": false
+      },
+      "parameters": []
+    },
+    "/api/product-types": {
+      "get": {
+        "operationId": "getProduct-typeCollection",
+        "tags": [
+          "product-type"
+        ],
+        "responses": {
+          "200": {
+            "description": "product-type collection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/product-type-Read"
+                  }
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/product-type-Read"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Retrieves the collection of product-type resources.",
+        "description": "Retrieves the collection of product-type resources.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The collection page number",
+            "required": false,
+            "deprecated": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            },
+            "style": "form",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "deprecated": false
+      },
+      "post": {
+        "operationId": "postProduct-typeCollection",
+        "tags": [
+          "product-type"
+        ],
+        "responses": {
+          "201": {
+            "description": "product-type resource created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/product-type-Read"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/product-type-Read"
+                }
+              }
+            },
+            "links": {
+              "GetProduct-typeItem": {
+                "operationId": "getProduct-typeItem",
+                "parameters": {
+                  "id": "$response.body#/id"
+                },
+                "description": "The `id` value returned in the response can be used as the `id` parameter in `GET /api/product-types/{id}`."
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "422": {
+            "description": "Unprocessable entity"
+          }
+        },
+        "summary": "Creates a product-type resource.",
+        "description": "Creates a product-type resource.",
+        "parameters": [],
+        "requestBody": {
+          "description": "The new product-type resource",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/product-type-Write"
+              }
+            },
+            "text/html": {
+              "schema": {
+                "$ref": "#/components/schemas/product-type-Write"
+              }
+            }
+          },
+          "required": true
+        },
+        "deprecated": false
+      },
+      "parameters": []
+    },
+    "/api/product-types/{id}": {
+      "get": {
+        "operationId": "getProduct-typeItem",
+        "tags": [
+          "product-type"
+        ],
+        "responses": {
+          "200": {
+            "description": "product-type resource",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/product-type-Read"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/product-type-Read"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        },
+        "summary": "Retrieves a product-type resource.",
+        "description": "Retrieves a product-type resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Resource identifier",
+            "required": true,
+            "deprecated": false,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "deprecated": false
+      },
+      "put": {
+        "operationId": "putProduct-typeItem",
+        "tags": [
+          "product-type"
+        ],
+        "responses": {
+          "200": {
+            "description": "product-type resource updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/product-type-Read"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/product-type-Read"
+                }
+              }
+            },
+            "links": {
+              "GetProduct-typeItem": {
+                "operationId": "getProduct-typeItem",
+                "parameters": {
+                  "id": "$response.body#/id"
+                },
+                "description": "The `id` value returned in the response can be used as the `id` parameter in `GET /api/product-types/{id}`."
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "422": {
+            "description": "Unprocessable entity"
+          }
+        },
+        "summary": "Replaces the product-type resource.",
+        "description": "Replaces the product-type resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Resource identifier",
+            "required": true,
+            "deprecated": false,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "requestBody": {
+          "description": "The updated product-type resource",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/product-type-Write"
+              }
+            },
+            "text/html": {
+              "schema": {
+                "$ref": "#/components/schemas/product-type-Write"
+              }
+            }
+          },
+          "required": true
+        },
+        "deprecated": false
+      },
+      "parameters": []
+    },
+    "/api/products": {
+      "get": {
+        "operationId": "getProductsCollection",
+        "tags": [
+          "products"
+        ],
+        "responses": {
+          "200": {
+            "description": "products collection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/products-Read"
+                  }
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/products-Read"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Retrieves the collection of products resources.",
+        "description": "Retrieves the collection of products resources.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The collection page number",
+            "required": false,
+            "deprecated": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            },
+            "style": "form",
+            "explode": false,
+            "allowReserved": false
+          },
+          {
+            "name": "title",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "deprecated": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "form",
+            "explode": false,
+            "allowReserved": false
+          },
+          {
+            "name": "description",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "deprecated": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "form",
+            "explode": false,
+            "allowReserved": false
+          },
+          {
+            "name": "quantity[between]",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "deprecated": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "form",
+            "explode": false,
+            "allowReserved": false
+          },
+          {
+            "name": "quantity[gt]",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "deprecated": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "form",
+            "explode": false,
+            "allowReserved": false
+          },
+          {
+            "name": "quantity[gte]",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "deprecated": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "form",
+            "explode": false,
+            "allowReserved": false
+          },
+          {
+            "name": "quantity[lt]",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "deprecated": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "form",
+            "explode": false,
+            "allowReserved": false
+          },
+          {
+            "name": "quantity[lte]",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "deprecated": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "form",
+            "explode": false,
+            "allowReserved": false
+          },
+          {
+            "name": "isAvailable",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "deprecated": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "boolean"
+            },
+            "style": "form",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "deprecated": false
+      },
+      "post": {
+        "operationId": "postProductsCollection",
+        "tags": [
+          "products"
+        ],
+        "responses": {
+          "201": {
+            "description": "products resource created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/products-Read"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/products-Read"
+                }
+              }
+            },
+            "links": {
+              "GetProductsItem": {
+                "operationId": "getProductsItem",
+                "parameters": {
+                  "id": "$response.body#/id"
+                },
+                "description": "The `id` value returned in the response can be used as the `id` parameter in `GET /api/products/{id}`."
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "422": {
+            "description": "Unprocessable entity"
+          }
+        },
+        "summary": "Creates a products resource.",
+        "description": "Creates a products resource.",
+        "parameters": [],
+        "requestBody": {
+          "description": "The new products resource",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/products-Write"
+              }
+            },
+            "text/html": {
+              "schema": {
+                "$ref": "#/components/schemas/products-Write"
+              }
+            }
+          },
+          "required": true
+        },
+        "deprecated": false
+      },
+      "parameters": []
+    },
+    "/api/products/{id}": {
+      "get": {
+        "operationId": "getProductsItem",
+        "tags": [
+          "products"
+        ],
+        "responses": {
+          "200": {
+            "description": "products resource",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/products-Read"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/products-Read"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        },
+        "summary": "Retrieves a products resource.",
+        "description": "Retrieves a products resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Resource identifier",
+            "required": true,
+            "deprecated": false,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "deprecated": false
+      },
+      "put": {
+        "operationId": "putProductsItem",
+        "tags": [
+          "products"
+        ],
+        "responses": {
+          "200": {
+            "description": "products resource updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/products-Read"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/products-Read"
+                }
+              }
+            },
+            "links": {
+              "GetProductsItem": {
+                "operationId": "getProductsItem",
+                "parameters": {
+                  "id": "$response.body#/id"
+                },
+                "description": "The `id` value returned in the response can be used as the `id` parameter in `GET /api/products/{id}`."
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "422": {
+            "description": "Unprocessable entity"
+          }
+        },
+        "summary": "Replaces the products resource.",
+        "description": "Replaces the products resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Resource identifier",
+            "required": true,
+            "deprecated": false,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "requestBody": {
+          "description": "The updated products resource",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/products-Write"
+              }
+            },
+            "text/html": {
+              "schema": {
+                "$ref": "#/components/schemas/products-Write"
+              }
+            }
+          },
+          "required": true
+        },
+        "deprecated": false
+      },
+      "parameters": []
+    },
+    "/api/users": {
+      "get": {
+        "operationId": "getUserCollection",
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "User collection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User-user.read"
+                  }
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User-user.read"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Retrieves the collection of User resources.",
+        "description": "Retrieves the collection of User resources.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The collection page number",
+            "required": false,
+            "deprecated": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            },
+            "style": "form",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "deprecated": false
+      },
+      "post": {
+        "operationId": "postUserCollection",
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "201": {
+            "description": "User resource created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User-user.read"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/User-user.read"
+                }
+              }
+            },
+            "links": {
+              "GetUserItem": {
+                "operationId": "getUserItem",
+                "parameters": {
+                  "id": "$response.body#/id"
+                },
+                "description": "The `id` value returned in the response can be used as the `id` parameter in `GET /api/users/{id}`."
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "422": {
+            "description": "Unprocessable entity"
+          }
+        },
+        "summary": "Creates a User resource.",
+        "description": "Creates a User resource.",
+        "parameters": [],
+        "requestBody": {
+          "description": "The new User resource",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User-user.write"
+              }
+            },
+            "text/html": {
+              "schema": {
+                "$ref": "#/components/schemas/User-user.write"
+              }
+            }
+          },
+          "required": true
+        },
+        "deprecated": false
+      },
+      "parameters": []
+    },
+    "/api/users/{id}": {
+      "get": {
+        "operationId": "getUserItem",
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "User resource",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User-user.read"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/User-user.read"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        },
+        "summary": "Retrieves a User resource.",
+        "description": "Retrieves a User resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Resource identifier",
+            "required": true,
+            "deprecated": false,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "deprecated": false
+      },
+      "put": {
+        "operationId": "putUserItem",
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "User resource updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User-user.read"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/User-user.read"
+                }
+              }
+            },
+            "links": {
+              "GetUserItem": {
+                "operationId": "getUserItem",
+                "parameters": {
+                  "id": "$response.body#/id"
+                },
+                "description": "The `id` value returned in the response can be used as the `id` parameter in `GET /api/users/{id}`."
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "422": {
+            "description": "Unprocessable entity"
+          }
+        },
+        "summary": "Replaces the User resource.",
+        "description": "Replaces the User resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Resource identifier",
+            "required": true,
+            "deprecated": false,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "requestBody": {
+          "description": "The updated User resource",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User-user.write"
+              }
+            },
+            "text/html": {
+              "schema": {
+                "$ref": "#/components/schemas/User-user.write"
+              }
+            }
+          },
+          "required": true
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "operationId": "deleteUserItem",
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "204": {
+            "description": "User resource deleted"
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        },
+        "summary": "Removes the User resource.",
+        "description": "Removes the User resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Resource identifier",
+            "required": true,
+            "deprecated": false,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "deprecated": false
+      },
+      "patch": {
+        "operationId": "patchUserItem",
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "User resource updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User-user.read"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/User-user.read"
+                }
+              }
+            },
+            "links": {
+              "GetUserItem": {
+                "operationId": "getUserItem",
+                "parameters": {
+                  "id": "$response.body#/id"
+                },
+                "description": "The `id` value returned in the response can be used as the `id` parameter in `GET /api/users/{id}`."
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "422": {
+            "description": "Unprocessable entity"
+          }
+        },
+        "summary": "Updates the User resource.",
+        "description": "Updates the User resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Resource identifier",
+            "required": true,
+            "deprecated": false,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "requestBody": {
+          "description": "The updated User resource",
+          "content": {
+            "application/merge-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/User-user.write"
+              }
+            }
+          },
+          "required": true
+        },
+        "deprecated": false
+      },
+      "parameters": []
+    }
+  },
+  "components": {
+    "schemas": {
+      "Categories-Read": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "level": {
+            "type": "integer"
+          },
+          "parentCategory": {
+            "nullable": true,
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Categories-Read"
+              }
+            ]
+          }
+        }
+      },
+      "Categories-Write": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "level": {
+            "type": "integer"
+          },
+          "parentCategory": {
+            "nullable": true,
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Categories-Write"
+              }
+            ]
+          }
+        }
+      },
+      "Characteristic-Read": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Characteristic-Write": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "product": {
+            "type": "string",
+            "format": "iri-reference",
+            "nullable": true
+          }
+        }
+      },
+      "User-user.read": {
+        "type": "object",
+        "description": "",
+        "required": [
+          "username"
+        ],
+        "properties": {
+          "username": {
+            "type": "string"
+          }
+        }
+      },
+      "User-user.write": {
+        "type": "object",
+        "description": "",
+        "required": [
+          "username"
+        ],
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "description": "The hashed password",
+            "type": "string"
+          }
+        }
+      },
+      "product-type-Read": {
+        "type": "object",
+        "description": "",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "product-type-Write": {
+        "type": "object",
+        "description": "",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "products-Read": {
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": {
+            "readOnly": true,
+            "type": "integer"
+          },
+          "sku": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "productType": {
+            "$ref": "#/components/schemas/product-type-Read"
+          },
+          "price": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "imageRecto": {
+            "type": "string"
+          },
+          "imageVerso": {
+            "type": "string"
+          },
+          "category": {
+            "$ref": "#/components/schemas/Categories-Read"
+          },
+          "isAvailable": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "characteristics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Characteristic-Read"
+            }
+          }
+        },
+        "required": [
+          "sku",
+          "title",
+          "price",
+          "imageRecto",
+          "imageVerso"
+        ]
+      },
+      "products-Write": {
+        "type": "object",
+        "description": "",
+        "required": [
+          "sku",
+          "title",
+          "price",
+          "imageRecto",
+          "imageVerso"
+        ],
+        "properties": {
+          "sku": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "productType": {
+            "type": "string",
+            "format": "iri-reference"
+          },
+          "price": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "imageRecto": {
+            "type": "string"
+          },
+          "imageVerso": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string",
+            "format": "iri-reference"
+          },
+          "isAvailable": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "characteristics": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "iri-reference"
+            }
+          }
+        }
+      }
+    },
+    "responses": {},
+    "parameters": {},
+    "examples": {},
+    "requestBodies": {},
+    "headers": {},
+    "securitySchemes": {}
+  },
+  "security": [],
+  "tags": []
+}
