@@ -1,4 +1,4 @@
-# OpenAPI\Client\ProductsApi
+# ProductApi\ProductsApi
 
 All URIs are relative to http://localhost.
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `getProductsCollection()`
 
 ```php
-getProductsCollection($page, $title, $description, $quantity_between, $quantity_gt, $quantity_gte, $quantity_lt, $quantity_lte, $is_available): \OpenAPI\Client\Model\ProductsRead[]
+getProductsCollection($page, $title, $description, $quantity_between, $quantity_gt, $quantity_gte, $quantity_lt, $quantity_lte, $is_available): \ProductApi\Model\ProductsRead[]
 ```
 
 Retrieves the collection of products resources.
@@ -28,7 +28,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\ProductsApi(
+$apiInstance = new ProductApi\Api\ProductsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ProductsRead[]**](../Model/ProductsRead.md)
+[**\ProductApi\Model\ProductsRead[]**](../Model/ProductsRead.md)
 
 ### Authorization
 
@@ -85,7 +85,7 @@ No authorization required
 ## `getProductsItem()`
 
 ```php
-getProductsItem($id): \OpenAPI\Client\Model\ProductsRead
+getProductsItem($id): \ProductApi\Model\ProductsRead
 ```
 
 Retrieves a products resource.
@@ -100,7 +100,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\ProductsApi(
+$apiInstance = new ProductApi\Api\ProductsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ProductsRead**](../Model/ProductsRead.md)
+[**\ProductApi\Model\ProductsRead**](../Model/ProductsRead.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ No authorization required
 ## `postProductsCollection()`
 
 ```php
-postProductsCollection($products_write): \OpenAPI\Client\Model\ProductsRead
+postProductsCollection($products_write): \ProductApi\Model\ProductsRead
 ```
 
 Creates a products resource.
@@ -156,12 +156,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\ProductsApi(
+$apiInstance = new ProductApi\Api\ProductsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$products_write = new \OpenAPI\Client\Model\ProductsWrite(); // \OpenAPI\Client\Model\ProductsWrite | The new products resource
+$products_write = new \ProductApi\Model\ProductsWrite(); // \ProductApi\Model\ProductsWrite | The new products resource
 
 try {
     $result = $apiInstance->postProductsCollection($products_write);
@@ -175,11 +175,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **products_write** | [**\OpenAPI\Client\Model\ProductsWrite**](../Model/ProductsWrite.md)| The new products resource |
+ **products_write** | [**\ProductApi\Model\ProductsWrite**](../Model/ProductsWrite.md)| The new products resource |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ProductsRead**](../Model/ProductsRead.md)
+[**\ProductApi\Model\ProductsRead**](../Model/ProductsRead.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ No authorization required
 ## `putProductsItem()`
 
 ```php
-putProductsItem($id, $products_write): \OpenAPI\Client\Model\ProductsRead
+putProductsItem($id, $products_write): \ProductApi\Model\ProductsRead
 ```
 
 Replaces the products resource.
@@ -212,13 +212,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\ProductsApi(
+$apiInstance = new ProductApi\Api\ProductsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = 'id_example'; // string | Resource identifier
-$products_write = new \OpenAPI\Client\Model\ProductsWrite(); // \OpenAPI\Client\Model\ProductsWrite | The updated products resource
+$products_write = new \ProductApi\Model\ProductsWrite(); // \ProductApi\Model\ProductsWrite | The updated products resource
 
 try {
     $result = $apiInstance->putProductsItem($id, $products_write);
@@ -233,11 +233,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Resource identifier |
- **products_write** | [**\OpenAPI\Client\Model\ProductsWrite**](../Model/ProductsWrite.md)| The updated products resource |
+ **products_write** | [**\ProductApi\Model\ProductsWrite**](../Model/ProductsWrite.md)| The updated products resource |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ProductsRead**](../Model/ProductsRead.md)
+[**\ProductApi\Model\ProductsRead**](../Model/ProductsRead.md)
 
 ### Authorization
 

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  ProductApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,16 +25,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace ProductApi\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \ProductApi\ObjectSerializer;
 
 /**
  * ProductsRead Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  ProductApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -61,15 +61,15 @@ class ProductsRead implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int',
         'sku' => 'string',
         'title' => 'string',
-        'product_type' => '\OpenAPI\Client\Model\ProductTypeRead',
+        'product_type' => '\ProductApi\Model\ProductTypeRead',
         'price' => 'string',
         'quantity' => 'int',
         'image_recto' => 'string',
         'image_verso' => 'string',
-        'category' => '\OpenAPI\Client\Model\CategoriesRead',
+        'category' => '\ProductApi\Model\CategoriesRead',
         'is_available' => 'bool',
         'description' => 'string',
-        'characteristics' => '\OpenAPI\Client\Model\CharacteristicRead[]'
+        'characteristics' => '\ProductApi\Model\CharacteristicRead[]'
     ];
 
     /**
@@ -363,7 +363,7 @@ class ProductsRead implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets product_type
      *
-     * @return \OpenAPI\Client\Model\ProductTypeRead|null
+     * @return \ProductApi\Model\ProductTypeRead|null
      */
     public function getProductType()
     {
@@ -373,7 +373,7 @@ class ProductsRead implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets product_type
      *
-     * @param \OpenAPI\Client\Model\ProductTypeRead|null $product_type product_type
+     * @param \ProductApi\Model\ProductTypeRead|null $product_type product_type
      *
      * @return self
      */
@@ -483,7 +483,7 @@ class ProductsRead implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets category
      *
-     * @return \OpenAPI\Client\Model\CategoriesRead|null
+     * @return \ProductApi\Model\CategoriesRead|null
      */
     public function getCategory()
     {
@@ -493,7 +493,7 @@ class ProductsRead implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets category
      *
-     * @param \OpenAPI\Client\Model\CategoriesRead|null $category category
+     * @param \ProductApi\Model\CategoriesRead|null $category category
      *
      * @return self
      */
@@ -555,7 +555,7 @@ class ProductsRead implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets characteristics
      *
-     * @return \OpenAPI\Client\Model\CharacteristicRead[]|null
+     * @return \ProductApi\Model\CharacteristicRead[]|null
      */
     public function getCharacteristics()
     {
@@ -565,7 +565,7 @@ class ProductsRead implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets characteristics
      *
-     * @param \OpenAPI\Client\Model\CharacteristicRead[]|null $characteristics characteristics
+     * @param \ProductApi\Model\CharacteristicRead[]|null $characteristics characteristics
      *
      * @return self
      */

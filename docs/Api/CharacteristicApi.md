@@ -1,4 +1,4 @@
-# OpenAPI\Client\CharacteristicApi
+# ProductApi\CharacteristicApi
 
 All URIs are relative to http://localhost.
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `getCharacteristicCollection()`
 
 ```php
-getCharacteristicCollection($page): \OpenAPI\Client\Model\CharacteristicRead[]
+getCharacteristicCollection($page): \ProductApi\Model\CharacteristicRead[]
 ```
 
 Retrieves the collection of Characteristic resources.
@@ -28,7 +28,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CharacteristicApi(
+$apiInstance = new ProductApi\Api\CharacteristicApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CharacteristicRead[]**](../Model/CharacteristicRead.md)
+[**\ProductApi\Model\CharacteristicRead[]**](../Model/CharacteristicRead.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ No authorization required
 ## `getCharacteristicItem()`
 
 ```php
-getCharacteristicItem($id): \OpenAPI\Client\Model\CharacteristicRead
+getCharacteristicItem($id): \ProductApi\Model\CharacteristicRead
 ```
 
 Retrieves a Characteristic resource.
@@ -84,7 +84,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CharacteristicApi(
+$apiInstance = new ProductApi\Api\CharacteristicApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CharacteristicRead**](../Model/CharacteristicRead.md)
+[**\ProductApi\Model\CharacteristicRead**](../Model/CharacteristicRead.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ No authorization required
 ## `postCharacteristicCollection()`
 
 ```php
-postCharacteristicCollection($characteristic_write): \OpenAPI\Client\Model\CharacteristicRead
+postCharacteristicCollection($characteristic_write): \ProductApi\Model\CharacteristicRead
 ```
 
 Creates a Characteristic resource.
@@ -140,12 +140,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CharacteristicApi(
+$apiInstance = new ProductApi\Api\CharacteristicApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$characteristic_write = new \OpenAPI\Client\Model\CharacteristicWrite(); // \OpenAPI\Client\Model\CharacteristicWrite | The new Characteristic resource
+$characteristic_write = new \ProductApi\Model\CharacteristicWrite(); // \ProductApi\Model\CharacteristicWrite | The new Characteristic resource
 
 try {
     $result = $apiInstance->postCharacteristicCollection($characteristic_write);
@@ -159,11 +159,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characteristic_write** | [**\OpenAPI\Client\Model\CharacteristicWrite**](../Model/CharacteristicWrite.md)| The new Characteristic resource |
+ **characteristic_write** | [**\ProductApi\Model\CharacteristicWrite**](../Model/CharacteristicWrite.md)| The new Characteristic resource |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CharacteristicRead**](../Model/CharacteristicRead.md)
+[**\ProductApi\Model\CharacteristicRead**](../Model/CharacteristicRead.md)
 
 ### Authorization
 
@@ -181,7 +181,7 @@ No authorization required
 ## `putCharacteristicItem()`
 
 ```php
-putCharacteristicItem($id, $characteristic_write): \OpenAPI\Client\Model\CharacteristicRead
+putCharacteristicItem($id, $characteristic_write): \ProductApi\Model\CharacteristicRead
 ```
 
 Replaces the Characteristic resource.
@@ -196,13 +196,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CharacteristicApi(
+$apiInstance = new ProductApi\Api\CharacteristicApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = 'id_example'; // string | Resource identifier
-$characteristic_write = new \OpenAPI\Client\Model\CharacteristicWrite(); // \OpenAPI\Client\Model\CharacteristicWrite | The updated Characteristic resource
+$characteristic_write = new \ProductApi\Model\CharacteristicWrite(); // \ProductApi\Model\CharacteristicWrite | The updated Characteristic resource
 
 try {
     $result = $apiInstance->putCharacteristicItem($id, $characteristic_write);
@@ -217,11 +217,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Resource identifier |
- **characteristic_write** | [**\OpenAPI\Client\Model\CharacteristicWrite**](../Model/CharacteristicWrite.md)| The updated Characteristic resource |
+ **characteristic_write** | [**\ProductApi\Model\CharacteristicWrite**](../Model/CharacteristicWrite.md)| The updated Characteristic resource |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CharacteristicRead**](../Model/CharacteristicRead.md)
+[**\ProductApi\Model\CharacteristicRead**](../Model/CharacteristicRead.md)
 
 ### Authorization
 

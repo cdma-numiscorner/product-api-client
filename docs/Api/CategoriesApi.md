@@ -1,4 +1,4 @@
-# OpenAPI\Client\CategoriesApi
+# ProductApi\CategoriesApi
 
 All URIs are relative to http://localhost.
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `getCategoriesCollection()`
 
 ```php
-getCategoriesCollection($page): \OpenAPI\Client\Model\CategoriesRead[]
+getCategoriesCollection($page): \ProductApi\Model\CategoriesRead[]
 ```
 
 Retrieves the collection of Categories resources.
@@ -28,7 +28,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CategoriesApi(
+$apiInstance = new ProductApi\Api\CategoriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CategoriesRead[]**](../Model/CategoriesRead.md)
+[**\ProductApi\Model\CategoriesRead[]**](../Model/CategoriesRead.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ No authorization required
 ## `getCategoriesItem()`
 
 ```php
-getCategoriesItem($id): \OpenAPI\Client\Model\CategoriesRead
+getCategoriesItem($id): \ProductApi\Model\CategoriesRead
 ```
 
 Retrieves a Categories resource.
@@ -84,7 +84,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CategoriesApi(
+$apiInstance = new ProductApi\Api\CategoriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CategoriesRead**](../Model/CategoriesRead.md)
+[**\ProductApi\Model\CategoriesRead**](../Model/CategoriesRead.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ No authorization required
 ## `postCategoriesCollection()`
 
 ```php
-postCategoriesCollection($categories_write): \OpenAPI\Client\Model\CategoriesRead
+postCategoriesCollection($categories_write): \ProductApi\Model\CategoriesRead
 ```
 
 Creates a Categories resource.
@@ -140,12 +140,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CategoriesApi(
+$apiInstance = new ProductApi\Api\CategoriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$categories_write = new \OpenAPI\Client\Model\CategoriesWrite(); // \OpenAPI\Client\Model\CategoriesWrite | The new Categories resource
+$categories_write = new \ProductApi\Model\CategoriesWrite(); // \ProductApi\Model\CategoriesWrite | The new Categories resource
 
 try {
     $result = $apiInstance->postCategoriesCollection($categories_write);
@@ -159,11 +159,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categories_write** | [**\OpenAPI\Client\Model\CategoriesWrite**](../Model/CategoriesWrite.md)| The new Categories resource |
+ **categories_write** | [**\ProductApi\Model\CategoriesWrite**](../Model/CategoriesWrite.md)| The new Categories resource |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CategoriesRead**](../Model/CategoriesRead.md)
+[**\ProductApi\Model\CategoriesRead**](../Model/CategoriesRead.md)
 
 ### Authorization
 
@@ -181,7 +181,7 @@ No authorization required
 ## `putCategoriesItem()`
 
 ```php
-putCategoriesItem($id, $categories_write): \OpenAPI\Client\Model\CategoriesRead
+putCategoriesItem($id, $categories_write): \ProductApi\Model\CategoriesRead
 ```
 
 Replaces the Categories resource.
@@ -196,13 +196,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\CategoriesApi(
+$apiInstance = new ProductApi\Api\CategoriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = 'id_example'; // string | Resource identifier
-$categories_write = new \OpenAPI\Client\Model\CategoriesWrite(); // \OpenAPI\Client\Model\CategoriesWrite | The updated Categories resource
+$categories_write = new \ProductApi\Model\CategoriesWrite(); // \ProductApi\Model\CategoriesWrite | The updated Categories resource
 
 try {
     $result = $apiInstance->putCategoriesItem($id, $categories_write);
@@ -217,11 +217,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Resource identifier |
- **categories_write** | [**\OpenAPI\Client\Model\CategoriesWrite**](../Model/CategoriesWrite.md)| The updated Categories resource |
+ **categories_write** | [**\ProductApi\Model\CategoriesWrite**](../Model/CategoriesWrite.md)| The updated Categories resource |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CategoriesRead**](../Model/CategoriesRead.md)
+[**\ProductApi\Model\CategoriesRead**](../Model/CategoriesRead.md)
 
 ### Authorization
 

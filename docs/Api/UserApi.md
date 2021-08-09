@@ -1,4 +1,4 @@
-# OpenAPI\Client\UserApi
+# ProductApi\UserApi
 
 All URIs are relative to http://localhost.
 
@@ -30,7 +30,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\UserApi(
+$apiInstance = new ProductApi\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -70,7 +70,7 @@ No authorization required
 ## `getUserCollection()`
 
 ```php
-getUserCollection($page): \OpenAPI\Client\Model\UserUserRead[]
+getUserCollection($page): \ProductApi\Model\UserUserRead[]
 ```
 
 Retrieves the collection of User resources.
@@ -85,7 +85,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\UserApi(
+$apiInstance = new ProductApi\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\UserUserRead[]**](../Model/UserUserRead.md)
+[**\ProductApi\Model\UserUserRead[]**](../Model/UserUserRead.md)
 
 ### Authorization
 
@@ -126,7 +126,7 @@ No authorization required
 ## `getUserItem()`
 
 ```php
-getUserItem($id): \OpenAPI\Client\Model\UserUserRead
+getUserItem($id): \ProductApi\Model\UserUserRead
 ```
 
 Retrieves a User resource.
@@ -141,7 +141,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\UserApi(
+$apiInstance = new ProductApi\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\UserUserRead**](../Model/UserUserRead.md)
+[**\ProductApi\Model\UserUserRead**](../Model/UserUserRead.md)
 
 ### Authorization
 
@@ -182,7 +182,7 @@ No authorization required
 ## `patchUserItem()`
 
 ```php
-patchUserItem($id, $user_user_write): \OpenAPI\Client\Model\UserUserRead
+patchUserItem($id, $user_user_write): \ProductApi\Model\UserUserRead
 ```
 
 Updates the User resource.
@@ -197,13 +197,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\UserApi(
+$apiInstance = new ProductApi\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = 'id_example'; // string | Resource identifier
-$user_user_write = new \OpenAPI\Client\Model\UserUserWrite(); // \OpenAPI\Client\Model\UserUserWrite | The updated User resource
+$user_user_write = new \ProductApi\Model\UserUserWrite(); // \ProductApi\Model\UserUserWrite | The updated User resource
 
 try {
     $result = $apiInstance->patchUserItem($id, $user_user_write);
@@ -218,11 +218,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Resource identifier |
- **user_user_write** | [**\OpenAPI\Client\Model\UserUserWrite**](../Model/UserUserWrite.md)| The updated User resource |
+ **user_user_write** | [**\ProductApi\Model\UserUserWrite**](../Model/UserUserWrite.md)| The updated User resource |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\UserUserRead**](../Model/UserUserRead.md)
+[**\ProductApi\Model\UserUserRead**](../Model/UserUserRead.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ No authorization required
 ## `postUserCollection()`
 
 ```php
-postUserCollection($user_user_write): \OpenAPI\Client\Model\UserUserRead
+postUserCollection($user_user_write): \ProductApi\Model\UserUserRead
 ```
 
 Creates a User resource.
@@ -255,12 +255,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\UserApi(
+$apiInstance = new ProductApi\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$user_user_write = new \OpenAPI\Client\Model\UserUserWrite(); // \OpenAPI\Client\Model\UserUserWrite | The new User resource
+$user_user_write = new \ProductApi\Model\UserUserWrite(); // \ProductApi\Model\UserUserWrite | The new User resource
 
 try {
     $result = $apiInstance->postUserCollection($user_user_write);
@@ -274,11 +274,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_user_write** | [**\OpenAPI\Client\Model\UserUserWrite**](../Model/UserUserWrite.md)| The new User resource |
+ **user_user_write** | [**\ProductApi\Model\UserUserWrite**](../Model/UserUserWrite.md)| The new User resource |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\UserUserRead**](../Model/UserUserRead.md)
+[**\ProductApi\Model\UserUserRead**](../Model/UserUserRead.md)
 
 ### Authorization
 
@@ -296,7 +296,7 @@ No authorization required
 ## `putUserItem()`
 
 ```php
-putUserItem($id, $user_user_write): \OpenAPI\Client\Model\UserUserRead
+putUserItem($id, $user_user_write): \ProductApi\Model\UserUserRead
 ```
 
 Replaces the User resource.
@@ -311,13 +311,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\UserApi(
+$apiInstance = new ProductApi\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = 'id_example'; // string | Resource identifier
-$user_user_write = new \OpenAPI\Client\Model\UserUserWrite(); // \OpenAPI\Client\Model\UserUserWrite | The updated User resource
+$user_user_write = new \ProductApi\Model\UserUserWrite(); // \ProductApi\Model\UserUserWrite | The updated User resource
 
 try {
     $result = $apiInstance->putUserItem($id, $user_user_write);
@@ -332,11 +332,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Resource identifier |
- **user_user_write** | [**\OpenAPI\Client\Model\UserUserWrite**](../Model/UserUserWrite.md)| The updated User resource |
+ **user_user_write** | [**\ProductApi\Model\UserUserWrite**](../Model/UserUserWrite.md)| The updated User resource |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\UserUserRead**](../Model/UserUserRead.md)
+[**\ProductApi\Model\UserUserRead**](../Model/UserUserRead.md)
 
 ### Authorization
 
