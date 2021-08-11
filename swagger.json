@@ -1478,6 +1478,11 @@
           "value": {
             "type": "string",
             "nullable": true
+          },
+          "product": {
+            "type": "string",
+            "format": "iri-reference",
+            "nullable": true
           }
         }
       },
@@ -1570,12 +1575,6 @@
           },
           "description": {
             "type": "string"
-          },
-          "characteristics": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Characteristic-Read"
-            }
           }
         },
         "required": [
@@ -1628,12 +1627,6 @@
           },
           "description": {
             "type": "string"
-          },
-          "characteristics": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Characteristic-Write"
-            }
           }
         }
       }

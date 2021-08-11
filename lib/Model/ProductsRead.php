@@ -68,8 +68,7 @@ class ProductsRead implements ModelInterface, ArrayAccess, \JsonSerializable
         'image_verso' => 'string',
         'category' => '\ProductApi\Model\CategoriesRead',
         'is_available' => 'bool',
-        'description' => 'string',
-        'characteristics' => '\ProductApi\Model\CharacteristicRead[]'
+        'description' => 'string'
     ];
 
     /**
@@ -90,8 +89,7 @@ class ProductsRead implements ModelInterface, ArrayAccess, \JsonSerializable
         'image_verso' => null,
         'category' => null,
         'is_available' => null,
-        'description' => null,
-        'characteristics' => null
+        'description' => null
     ];
 
     /**
@@ -131,8 +129,7 @@ class ProductsRead implements ModelInterface, ArrayAccess, \JsonSerializable
         'image_verso' => 'imageVerso',
         'category' => 'category',
         'is_available' => 'isAvailable',
-        'description' => 'description',
-        'characteristics' => 'characteristics'
+        'description' => 'description'
     ];
 
     /**
@@ -151,8 +148,7 @@ class ProductsRead implements ModelInterface, ArrayAccess, \JsonSerializable
         'image_verso' => 'setImageVerso',
         'category' => 'setCategory',
         'is_available' => 'setIsAvailable',
-        'description' => 'setDescription',
-        'characteristics' => 'setCharacteristics'
+        'description' => 'setDescription'
     ];
 
     /**
@@ -171,8 +167,7 @@ class ProductsRead implements ModelInterface, ArrayAccess, \JsonSerializable
         'image_verso' => 'getImageVerso',
         'category' => 'getCategory',
         'is_available' => 'getIsAvailable',
-        'description' => 'getDescription',
-        'characteristics' => 'getCharacteristics'
+        'description' => 'getDescription'
     ];
 
     /**
@@ -246,7 +241,6 @@ class ProductsRead implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['category'] = $data['category'] ?? null;
         $this->container['is_available'] = $data['is_available'] ?? null;
         $this->container['description'] = $data['description'] ?? null;
-        $this->container['characteristics'] = $data['characteristics'] ?? null;
     }
 
     /**
@@ -548,30 +542,6 @@ class ProductsRead implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDescription($description)
     {
         $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets characteristics
-     *
-     * @return \ProductApi\Model\CharacteristicRead[]|null
-     */
-    public function getCharacteristics()
-    {
-        return $this->container['characteristics'];
-    }
-
-    /**
-     * Sets characteristics
-     *
-     * @param \ProductApi\Model\CharacteristicRead[]|null $characteristics characteristics
-     *
-     * @return self
-     */
-    public function setCharacteristics($characteristics)
-    {
-        $this->container['characteristics'] = $characteristics;
 
         return $this;
     }
