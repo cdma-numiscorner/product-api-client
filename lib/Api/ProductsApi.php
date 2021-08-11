@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  ProductApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -24,7 +24,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace ProductApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -32,16 +32,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use ProductApi\ApiException;
+use ProductApi\Configuration;
+use ProductApi\HeaderSelector;
+use ProductApi\ObjectSerializer;
 
 /**
  * ProductsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  ProductApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -128,9 +128,9 @@ class ProductsApi
      * @param  string $quantity_lte quantity_lte (optional)
      * @param  bool $is_available is_available (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ProductsRead[]
+     * @return \ProductApi\Model\ProductsRead[]
      */
     public function getProductsCollection($page = 1, $title = null, $description = null, $quantity_between = null, $quantity_gt = null, $quantity_gte = null, $quantity_lt = null, $quantity_lte = null, $is_available = null)
     {
@@ -153,9 +153,9 @@ class ProductsApi
      * @param  string $quantity_lte (optional)
      * @param  bool $is_available (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ProductsRead[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\ProductsRead[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getProductsCollectionWithHttpInfo($page = 1, $title = null, $description = null, $quantity_between = null, $quantity_gt = null, $quantity_gte = null, $quantity_lt = null, $quantity_lte = null, $is_available = null)
     {
@@ -192,20 +192,20 @@ class ProductsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ProductsRead[]' === '\SplFileObject') {
+                    if ('\ProductApi\Model\ProductsRead[]' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ProductsRead[]', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\ProductsRead[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\ProductsRead[]';
+            $returnType = '\ProductApi\Model\ProductsRead[]';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -224,7 +224,7 @@ class ProductsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ProductsRead[]',
+                        '\ProductApi\Model\ProductsRead[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -282,7 +282,7 @@ class ProductsApi
      */
     public function getProductsCollectionAsyncWithHttpInfo($page = 1, $title = null, $description = null, $quantity_between = null, $quantity_gt = null, $quantity_gte = null, $quantity_lt = null, $quantity_lte = null, $is_available = null)
     {
-        $returnType = '\OpenAPI\Client\Model\ProductsRead[]';
+        $returnType = '\ProductApi\Model\ProductsRead[]';
         $request = $this->getProductsCollectionRequest($page, $title, $description, $quantity_between, $quantity_gt, $quantity_gte, $quantity_lt, $quantity_lte, $is_available);
 
         return $this->client
@@ -476,9 +476,9 @@ class ProductsApi
      *
      * @param  string $id Resource identifier (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ProductsRead
+     * @return \ProductApi\Model\ProductsRead
      */
     public function getProductsItem($id)
     {
@@ -493,9 +493,9 @@ class ProductsApi
      *
      * @param  string $id Resource identifier (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ProductsRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\ProductsRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function getProductsItemWithHttpInfo($id)
     {
@@ -532,20 +532,20 @@ class ProductsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ProductsRead' === '\SplFileObject') {
+                    if ('\ProductApi\Model\ProductsRead' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ProductsRead', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\ProductsRead', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\ProductsRead';
+            $returnType = '\ProductApi\Model\ProductsRead';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -564,7 +564,7 @@ class ProductsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ProductsRead',
+                        '\ProductApi\Model\ProductsRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -606,7 +606,7 @@ class ProductsApi
      */
     public function getProductsItemAsyncWithHttpInfo($id)
     {
-        $returnType = '\OpenAPI\Client\Model\ProductsRead';
+        $returnType = '\ProductApi\Model\ProductsRead';
         $request = $this->getProductsItemRequest($id);
 
         return $this->client
@@ -741,11 +741,11 @@ class ProductsApi
      *
      * Creates a products resource.
      *
-     * @param  \OpenAPI\Client\Model\ProductsWrite $products_write The new products resource (required)
+     * @param  \ProductApi\Model\ProductsWrite $products_write The new products resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ProductsRead
+     * @return \ProductApi\Model\ProductsRead
      */
     public function postProductsCollection($products_write)
     {
@@ -758,11 +758,11 @@ class ProductsApi
      *
      * Creates a products resource.
      *
-     * @param  \OpenAPI\Client\Model\ProductsWrite $products_write The new products resource (required)
+     * @param  \ProductApi\Model\ProductsWrite $products_write The new products resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ProductsRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\ProductsRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function postProductsCollectionWithHttpInfo($products_write)
     {
@@ -799,20 +799,20 @@ class ProductsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 201:
-                    if ('\OpenAPI\Client\Model\ProductsRead' === '\SplFileObject') {
+                    if ('\ProductApi\Model\ProductsRead' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ProductsRead', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\ProductsRead', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\ProductsRead';
+            $returnType = '\ProductApi\Model\ProductsRead';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -831,7 +831,7 @@ class ProductsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ProductsRead',
+                        '\ProductApi\Model\ProductsRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -846,7 +846,7 @@ class ProductsApi
      *
      * Creates a products resource.
      *
-     * @param  \OpenAPI\Client\Model\ProductsWrite $products_write The new products resource (required)
+     * @param  \ProductApi\Model\ProductsWrite $products_write The new products resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -866,14 +866,14 @@ class ProductsApi
      *
      * Creates a products resource.
      *
-     * @param  \OpenAPI\Client\Model\ProductsWrite $products_write The new products resource (required)
+     * @param  \ProductApi\Model\ProductsWrite $products_write The new products resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function postProductsCollectionAsyncWithHttpInfo($products_write)
     {
-        $returnType = '\OpenAPI\Client\Model\ProductsRead';
+        $returnType = '\ProductApi\Model\ProductsRead';
         $request = $this->postProductsCollectionRequest($products_write);
 
         return $this->client
@@ -913,7 +913,7 @@ class ProductsApi
     /**
      * Create request for operation 'postProductsCollection'
      *
-     * @param  \OpenAPI\Client\Model\ProductsWrite $products_write The new products resource (required)
+     * @param  \ProductApi\Model\ProductsWrite $products_write The new products resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1007,11 +1007,11 @@ class ProductsApi
      * Replaces the products resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\ProductsWrite $products_write The updated products resource (required)
+     * @param  \ProductApi\Model\ProductsWrite $products_write The updated products resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ProductsRead
+     * @return \ProductApi\Model\ProductsRead
      */
     public function putProductsItem($id, $products_write)
     {
@@ -1025,11 +1025,11 @@ class ProductsApi
      * Replaces the products resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\ProductsWrite $products_write The updated products resource (required)
+     * @param  \ProductApi\Model\ProductsWrite $products_write The updated products resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ProductsRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\ProductsRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function putProductsItemWithHttpInfo($id, $products_write)
     {
@@ -1066,20 +1066,20 @@ class ProductsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ProductsRead' === '\SplFileObject') {
+                    if ('\ProductApi\Model\ProductsRead' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ProductsRead', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\ProductsRead', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\ProductsRead';
+            $returnType = '\ProductApi\Model\ProductsRead';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1098,7 +1098,7 @@ class ProductsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ProductsRead',
+                        '\ProductApi\Model\ProductsRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1114,7 +1114,7 @@ class ProductsApi
      * Replaces the products resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\ProductsWrite $products_write The updated products resource (required)
+     * @param  \ProductApi\Model\ProductsWrite $products_write The updated products resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1135,14 +1135,14 @@ class ProductsApi
      * Replaces the products resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\ProductsWrite $products_write The updated products resource (required)
+     * @param  \ProductApi\Model\ProductsWrite $products_write The updated products resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function putProductsItemAsyncWithHttpInfo($id, $products_write)
     {
-        $returnType = '\OpenAPI\Client\Model\ProductsRead';
+        $returnType = '\ProductApi\Model\ProductsRead';
         $request = $this->putProductsItemRequest($id, $products_write);
 
         return $this->client
@@ -1183,7 +1183,7 @@ class ProductsApi
      * Create request for operation 'putProductsItem'
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\ProductsWrite $products_write The updated products resource (required)
+     * @param  \ProductApi\Model\ProductsWrite $products_write The updated products resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

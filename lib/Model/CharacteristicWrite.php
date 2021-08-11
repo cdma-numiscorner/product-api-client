@@ -58,9 +58,9 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'int',
         'name' => 'string',
-        'value' => 'string',
-        'product' => 'string'
+        'value' => 'string'
     ];
 
     /**
@@ -71,9 +71,9 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'id' => null,
         'name' => null,
-        'value' => null,
-        'product' => 'iri-reference'
+        'value' => null
     ];
 
     /**
@@ -103,9 +103,9 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'name' => 'name',
-        'value' => 'value',
-        'product' => 'product'
+        'value' => 'value'
     ];
 
     /**
@@ -114,9 +114,9 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'name' => 'setName',
-        'value' => 'setValue',
-        'product' => 'setProduct'
+        'value' => 'setValue'
     ];
 
     /**
@@ -125,9 +125,9 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'name' => 'getName',
-        'value' => 'getValue',
-        'product' => 'getProduct'
+        'value' => 'getValue'
     ];
 
     /**
@@ -190,9 +190,9 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['value'] = $data['value'] ?? null;
-        $this->container['product'] = $data['product'] ?? null;
     }
 
     /**
@@ -218,6 +218,30 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets name
@@ -263,30 +287,6 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setValue($value)
     {
         $this->container['value'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets product
-     *
-     * @return string|null
-     */
-    public function getProduct()
-    {
-        return $this->container['product'];
-    }
-
-    /**
-     * Sets product
-     *
-     * @param string|null $product product
-     *
-     * @return self
-     */
-    public function setProduct($product)
-    {
-        $this->container['product'] = $product;
 
         return $this;
     }

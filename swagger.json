@@ -1451,6 +1451,10 @@
         "type": "object",
         "description": "",
         "properties": {
+          "id": {
+            "readOnly": true,
+            "type": "integer"
+          },
           "name": {
             "type": "string"
           },
@@ -1464,16 +1468,15 @@
         "type": "object",
         "description": "",
         "properties": {
+          "id": {
+            "readOnly": true,
+            "type": "integer"
+          },
           "name": {
             "type": "string"
           },
           "value": {
             "type": "string",
-            "nullable": true
-          },
-          "product": {
-            "type": "string",
-            "format": "iri-reference",
             "nullable": true
           }
         }
@@ -1629,8 +1632,7 @@
           "characteristics": {
             "type": "array",
             "items": {
-              "type": "string",
-              "format": "iri-reference"
+              "$ref": "#/components/schemas/Characteristic-Write"
             }
           }
         }

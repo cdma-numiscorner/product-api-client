@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **category** | **string** |  | [optional]
 **is_available** | **bool** |  | [optional]
 **description** | **string** |  | [optional]
-**characteristics** | **string[]** |  | [optional]
+**characteristics** | [**\ProductApi\Model\CharacteristicWrite[]**](CharacteristicWrite.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

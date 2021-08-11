@@ -68,7 +68,7 @@ class ProductsWrite implements ModelInterface, ArrayAccess, \JsonSerializable
         'category' => 'string',
         'is_available' => 'bool',
         'description' => 'string',
-        'characteristics' => 'string[]'
+        'characteristics' => '\ProductApi\Model\CharacteristicWrite[]'
     ];
 
     /**
@@ -89,7 +89,7 @@ class ProductsWrite implements ModelInterface, ArrayAccess, \JsonSerializable
         'category' => 'iri-reference',
         'is_available' => null,
         'description' => null,
-        'characteristics' => 'iri-reference'
+        'characteristics' => null
     ];
 
     /**
@@ -525,7 +525,7 @@ class ProductsWrite implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets characteristics
      *
-     * @return string[]|null
+     * @return \ProductApi\Model\CharacteristicWrite[]|null
      */
     public function getCharacteristics()
     {
@@ -535,7 +535,7 @@ class ProductsWrite implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets characteristics
      *
-     * @param string[]|null $characteristics characteristics
+     * @param \ProductApi\Model\CharacteristicWrite[]|null $characteristics characteristics
      *
      * @return self
      */

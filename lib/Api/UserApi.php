@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  ProductApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -24,7 +24,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace ProductApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -32,16 +32,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use ProductApi\ApiException;
+use ProductApi\Configuration;
+use ProductApi\HeaderSelector;
+use ProductApi\ObjectSerializer;
 
 /**
  * UserApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  ProductApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -120,7 +120,7 @@ class UserApi
      *
      * @param  string $id Resource identifier (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -136,7 +136,7 @@ class UserApi
      *
      * @param  string $id Resource identifier (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -339,9 +339,9 @@ class UserApi
      *
      * @param  int $page The collection page number (optional, default to 1)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\UserUserRead[]
+     * @return \ProductApi\Model\UserUserRead[]
      */
     public function getUserCollection($page = 1)
     {
@@ -356,9 +356,9 @@ class UserApi
      *
      * @param  int $page The collection page number (optional, default to 1)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\UserUserRead[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\UserUserRead[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getUserCollectionWithHttpInfo($page = 1)
     {
@@ -395,20 +395,20 @@ class UserApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\UserUserRead[]' === '\SplFileObject') {
+                    if ('\ProductApi\Model\UserUserRead[]' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UserUserRead[]', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\UserUserRead[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\UserUserRead[]';
+            $returnType = '\ProductApi\Model\UserUserRead[]';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -427,7 +427,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\UserUserRead[]',
+                        '\ProductApi\Model\UserUserRead[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -469,7 +469,7 @@ class UserApi
      */
     public function getUserCollectionAsyncWithHttpInfo($page = 1)
     {
-        $returnType = '\OpenAPI\Client\Model\UserUserRead[]';
+        $returnType = '\ProductApi\Model\UserUserRead[]';
         $request = $this->getUserCollectionRequest($page);
 
         return $this->client
@@ -599,9 +599,9 @@ class UserApi
      *
      * @param  string $id Resource identifier (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\UserUserRead
+     * @return \ProductApi\Model\UserUserRead
      */
     public function getUserItem($id)
     {
@@ -616,9 +616,9 @@ class UserApi
      *
      * @param  string $id Resource identifier (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\UserUserRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\UserUserRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUserItemWithHttpInfo($id)
     {
@@ -655,20 +655,20 @@ class UserApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\UserUserRead' === '\SplFileObject') {
+                    if ('\ProductApi\Model\UserUserRead' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UserUserRead', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\UserUserRead', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\UserUserRead';
+            $returnType = '\ProductApi\Model\UserUserRead';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -687,7 +687,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\UserUserRead',
+                        '\ProductApi\Model\UserUserRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -729,7 +729,7 @@ class UserApi
      */
     public function getUserItemAsyncWithHttpInfo($id)
     {
-        $returnType = '\OpenAPI\Client\Model\UserUserRead';
+        $returnType = '\ProductApi\Model\UserUserRead';
         $request = $this->getUserItemRequest($id);
 
         return $this->client
@@ -865,11 +865,11 @@ class UserApi
      * Updates the User resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\UserUserWrite $user_user_write The updated User resource (required)
+     * @param  \ProductApi\Model\UserUserWrite $user_user_write The updated User resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\UserUserRead
+     * @return \ProductApi\Model\UserUserRead
      */
     public function patchUserItem($id, $user_user_write)
     {
@@ -883,11 +883,11 @@ class UserApi
      * Updates the User resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\UserUserWrite $user_user_write The updated User resource (required)
+     * @param  \ProductApi\Model\UserUserWrite $user_user_write The updated User resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\UserUserRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\UserUserRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function patchUserItemWithHttpInfo($id, $user_user_write)
     {
@@ -924,20 +924,20 @@ class UserApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\UserUserRead' === '\SplFileObject') {
+                    if ('\ProductApi\Model\UserUserRead' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UserUserRead', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\UserUserRead', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\UserUserRead';
+            $returnType = '\ProductApi\Model\UserUserRead';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -956,7 +956,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\UserUserRead',
+                        '\ProductApi\Model\UserUserRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -972,7 +972,7 @@ class UserApi
      * Updates the User resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\UserUserWrite $user_user_write The updated User resource (required)
+     * @param  \ProductApi\Model\UserUserWrite $user_user_write The updated User resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -993,14 +993,14 @@ class UserApi
      * Updates the User resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\UserUserWrite $user_user_write The updated User resource (required)
+     * @param  \ProductApi\Model\UserUserWrite $user_user_write The updated User resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function patchUserItemAsyncWithHttpInfo($id, $user_user_write)
     {
-        $returnType = '\OpenAPI\Client\Model\UserUserRead';
+        $returnType = '\ProductApi\Model\UserUserRead';
         $request = $this->patchUserItemRequest($id, $user_user_write);
 
         return $this->client
@@ -1041,7 +1041,7 @@ class UserApi
      * Create request for operation 'patchUserItem'
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\UserUserWrite $user_user_write The updated User resource (required)
+     * @param  \ProductApi\Model\UserUserWrite $user_user_write The updated User resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1148,11 +1148,11 @@ class UserApi
      *
      * Creates a User resource.
      *
-     * @param  \OpenAPI\Client\Model\UserUserWrite $user_user_write The new User resource (required)
+     * @param  \ProductApi\Model\UserUserWrite $user_user_write The new User resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\UserUserRead
+     * @return \ProductApi\Model\UserUserRead
      */
     public function postUserCollection($user_user_write)
     {
@@ -1165,11 +1165,11 @@ class UserApi
      *
      * Creates a User resource.
      *
-     * @param  \OpenAPI\Client\Model\UserUserWrite $user_user_write The new User resource (required)
+     * @param  \ProductApi\Model\UserUserWrite $user_user_write The new User resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\UserUserRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\UserUserRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function postUserCollectionWithHttpInfo($user_user_write)
     {
@@ -1206,20 +1206,20 @@ class UserApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 201:
-                    if ('\OpenAPI\Client\Model\UserUserRead' === '\SplFileObject') {
+                    if ('\ProductApi\Model\UserUserRead' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UserUserRead', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\UserUserRead', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\UserUserRead';
+            $returnType = '\ProductApi\Model\UserUserRead';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1238,7 +1238,7 @@ class UserApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\UserUserRead',
+                        '\ProductApi\Model\UserUserRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1253,7 +1253,7 @@ class UserApi
      *
      * Creates a User resource.
      *
-     * @param  \OpenAPI\Client\Model\UserUserWrite $user_user_write The new User resource (required)
+     * @param  \ProductApi\Model\UserUserWrite $user_user_write The new User resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1273,14 +1273,14 @@ class UserApi
      *
      * Creates a User resource.
      *
-     * @param  \OpenAPI\Client\Model\UserUserWrite $user_user_write The new User resource (required)
+     * @param  \ProductApi\Model\UserUserWrite $user_user_write The new User resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function postUserCollectionAsyncWithHttpInfo($user_user_write)
     {
-        $returnType = '\OpenAPI\Client\Model\UserUserRead';
+        $returnType = '\ProductApi\Model\UserUserRead';
         $request = $this->postUserCollectionRequest($user_user_write);
 
         return $this->client
@@ -1320,7 +1320,7 @@ class UserApi
     /**
      * Create request for operation 'postUserCollection'
      *
-     * @param  \OpenAPI\Client\Model\UserUserWrite $user_user_write The new User resource (required)
+     * @param  \ProductApi\Model\UserUserWrite $user_user_write The new User resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1414,11 +1414,11 @@ class UserApi
      * Replaces the User resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\UserUserWrite $user_user_write The updated User resource (required)
+     * @param  \ProductApi\Model\UserUserWrite $user_user_write The updated User resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\UserUserRead
+     * @return \ProductApi\Model\UserUserRead
      */
     public function putUserItem($id, $user_user_write)
     {
@@ -1432,11 +1432,11 @@ class UserApi
      * Replaces the User resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\UserUserWrite $user_user_write The updated User resource (required)
+     * @param  \ProductApi\Model\UserUserWrite $user_user_write The updated User resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\UserUserRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\UserUserRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function putUserItemWithHttpInfo($id, $user_user_write)
     {
@@ -1473,20 +1473,20 @@ class UserApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\UserUserRead' === '\SplFileObject') {
+                    if ('\ProductApi\Model\UserUserRead' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\UserUserRead', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\UserUserRead', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\UserUserRead';
+            $returnType = '\ProductApi\Model\UserUserRead';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1505,7 +1505,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\UserUserRead',
+                        '\ProductApi\Model\UserUserRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1521,7 +1521,7 @@ class UserApi
      * Replaces the User resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\UserUserWrite $user_user_write The updated User resource (required)
+     * @param  \ProductApi\Model\UserUserWrite $user_user_write The updated User resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1542,14 +1542,14 @@ class UserApi
      * Replaces the User resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\UserUserWrite $user_user_write The updated User resource (required)
+     * @param  \ProductApi\Model\UserUserWrite $user_user_write The updated User resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function putUserItemAsyncWithHttpInfo($id, $user_user_write)
     {
-        $returnType = '\OpenAPI\Client\Model\UserUserRead';
+        $returnType = '\ProductApi\Model\UserUserRead';
         $request = $this->putUserItemRequest($id, $user_user_write);
 
         return $this->client
@@ -1590,7 +1590,7 @@ class UserApi
      * Create request for operation 'putUserItem'
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\UserUserWrite $user_user_write The updated User resource (required)
+     * @param  \ProductApi\Model\UserUserWrite $user_user_write The updated User resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

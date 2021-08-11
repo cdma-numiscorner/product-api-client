@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  ProductApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -24,7 +24,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace ProductApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -32,16 +32,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use ProductApi\ApiException;
+use ProductApi\Configuration;
+use ProductApi\HeaderSelector;
+use ProductApi\ObjectSerializer;
 
 /**
  * CharacteristicApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  ProductApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -120,9 +120,9 @@ class CharacteristicApi
      *
      * @param  int $page The collection page number (optional, default to 1)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CharacteristicRead[]
+     * @return \ProductApi\Model\CharacteristicRead[]
      */
     public function getCharacteristicCollection($page = 1)
     {
@@ -137,9 +137,9 @@ class CharacteristicApi
      *
      * @param  int $page The collection page number (optional, default to 1)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CharacteristicRead[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\CharacteristicRead[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCharacteristicCollectionWithHttpInfo($page = 1)
     {
@@ -176,20 +176,20 @@ class CharacteristicApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CharacteristicRead[]' === '\SplFileObject') {
+                    if ('\ProductApi\Model\CharacteristicRead[]' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CharacteristicRead[]', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\CharacteristicRead[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\CharacteristicRead[]';
+            $returnType = '\ProductApi\Model\CharacteristicRead[]';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -208,7 +208,7 @@ class CharacteristicApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CharacteristicRead[]',
+                        '\ProductApi\Model\CharacteristicRead[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -250,7 +250,7 @@ class CharacteristicApi
      */
     public function getCharacteristicCollectionAsyncWithHttpInfo($page = 1)
     {
-        $returnType = '\OpenAPI\Client\Model\CharacteristicRead[]';
+        $returnType = '\ProductApi\Model\CharacteristicRead[]';
         $request = $this->getCharacteristicCollectionRequest($page);
 
         return $this->client
@@ -380,9 +380,9 @@ class CharacteristicApi
      *
      * @param  string $id Resource identifier (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CharacteristicRead
+     * @return \ProductApi\Model\CharacteristicRead
      */
     public function getCharacteristicItem($id)
     {
@@ -397,9 +397,9 @@ class CharacteristicApi
      *
      * @param  string $id Resource identifier (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CharacteristicRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\CharacteristicRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCharacteristicItemWithHttpInfo($id)
     {
@@ -436,20 +436,20 @@ class CharacteristicApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CharacteristicRead' === '\SplFileObject') {
+                    if ('\ProductApi\Model\CharacteristicRead' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CharacteristicRead', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\CharacteristicRead', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\CharacteristicRead';
+            $returnType = '\ProductApi\Model\CharacteristicRead';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -468,7 +468,7 @@ class CharacteristicApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CharacteristicRead',
+                        '\ProductApi\Model\CharacteristicRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -510,7 +510,7 @@ class CharacteristicApi
      */
     public function getCharacteristicItemAsyncWithHttpInfo($id)
     {
-        $returnType = '\OpenAPI\Client\Model\CharacteristicRead';
+        $returnType = '\ProductApi\Model\CharacteristicRead';
         $request = $this->getCharacteristicItemRequest($id);
 
         return $this->client
@@ -645,11 +645,11 @@ class CharacteristicApi
      *
      * Creates a Characteristic resource.
      *
-     * @param  \OpenAPI\Client\Model\CharacteristicWrite $characteristic_write The new Characteristic resource (required)
+     * @param  \ProductApi\Model\CharacteristicWrite $characteristic_write The new Characteristic resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CharacteristicRead
+     * @return \ProductApi\Model\CharacteristicRead
      */
     public function postCharacteristicCollection($characteristic_write)
     {
@@ -662,11 +662,11 @@ class CharacteristicApi
      *
      * Creates a Characteristic resource.
      *
-     * @param  \OpenAPI\Client\Model\CharacteristicWrite $characteristic_write The new Characteristic resource (required)
+     * @param  \ProductApi\Model\CharacteristicWrite $characteristic_write The new Characteristic resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CharacteristicRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\CharacteristicRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function postCharacteristicCollectionWithHttpInfo($characteristic_write)
     {
@@ -703,20 +703,20 @@ class CharacteristicApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 201:
-                    if ('\OpenAPI\Client\Model\CharacteristicRead' === '\SplFileObject') {
+                    if ('\ProductApi\Model\CharacteristicRead' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CharacteristicRead', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\CharacteristicRead', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\CharacteristicRead';
+            $returnType = '\ProductApi\Model\CharacteristicRead';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -735,7 +735,7 @@ class CharacteristicApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CharacteristicRead',
+                        '\ProductApi\Model\CharacteristicRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -750,7 +750,7 @@ class CharacteristicApi
      *
      * Creates a Characteristic resource.
      *
-     * @param  \OpenAPI\Client\Model\CharacteristicWrite $characteristic_write The new Characteristic resource (required)
+     * @param  \ProductApi\Model\CharacteristicWrite $characteristic_write The new Characteristic resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -770,14 +770,14 @@ class CharacteristicApi
      *
      * Creates a Characteristic resource.
      *
-     * @param  \OpenAPI\Client\Model\CharacteristicWrite $characteristic_write The new Characteristic resource (required)
+     * @param  \ProductApi\Model\CharacteristicWrite $characteristic_write The new Characteristic resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function postCharacteristicCollectionAsyncWithHttpInfo($characteristic_write)
     {
-        $returnType = '\OpenAPI\Client\Model\CharacteristicRead';
+        $returnType = '\ProductApi\Model\CharacteristicRead';
         $request = $this->postCharacteristicCollectionRequest($characteristic_write);
 
         return $this->client
@@ -817,7 +817,7 @@ class CharacteristicApi
     /**
      * Create request for operation 'postCharacteristicCollection'
      *
-     * @param  \OpenAPI\Client\Model\CharacteristicWrite $characteristic_write The new Characteristic resource (required)
+     * @param  \ProductApi\Model\CharacteristicWrite $characteristic_write The new Characteristic resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -911,11 +911,11 @@ class CharacteristicApi
      * Replaces the Characteristic resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\CharacteristicWrite $characteristic_write The updated Characteristic resource (required)
+     * @param  \ProductApi\Model\CharacteristicWrite $characteristic_write The updated Characteristic resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CharacteristicRead
+     * @return \ProductApi\Model\CharacteristicRead
      */
     public function putCharacteristicItem($id, $characteristic_write)
     {
@@ -929,11 +929,11 @@ class CharacteristicApi
      * Replaces the Characteristic resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\CharacteristicWrite $characteristic_write The updated Characteristic resource (required)
+     * @param  \ProductApi\Model\CharacteristicWrite $characteristic_write The updated Characteristic resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CharacteristicRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\CharacteristicRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function putCharacteristicItemWithHttpInfo($id, $characteristic_write)
     {
@@ -970,20 +970,20 @@ class CharacteristicApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CharacteristicRead' === '\SplFileObject') {
+                    if ('\ProductApi\Model\CharacteristicRead' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CharacteristicRead', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\CharacteristicRead', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\CharacteristicRead';
+            $returnType = '\ProductApi\Model\CharacteristicRead';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1002,7 +1002,7 @@ class CharacteristicApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CharacteristicRead',
+                        '\ProductApi\Model\CharacteristicRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1018,7 +1018,7 @@ class CharacteristicApi
      * Replaces the Characteristic resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\CharacteristicWrite $characteristic_write The updated Characteristic resource (required)
+     * @param  \ProductApi\Model\CharacteristicWrite $characteristic_write The updated Characteristic resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1039,14 +1039,14 @@ class CharacteristicApi
      * Replaces the Characteristic resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\CharacteristicWrite $characteristic_write The updated Characteristic resource (required)
+     * @param  \ProductApi\Model\CharacteristicWrite $characteristic_write The updated Characteristic resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function putCharacteristicItemAsyncWithHttpInfo($id, $characteristic_write)
     {
-        $returnType = '\OpenAPI\Client\Model\CharacteristicRead';
+        $returnType = '\ProductApi\Model\CharacteristicRead';
         $request = $this->putCharacteristicItemRequest($id, $characteristic_write);
 
         return $this->client
@@ -1087,7 +1087,7 @@ class CharacteristicApi
      * Create request for operation 'putCharacteristicItem'
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\CharacteristicWrite $characteristic_write The updated Characteristic resource (required)
+     * @param  \ProductApi\Model\CharacteristicWrite $characteristic_write The updated Characteristic resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

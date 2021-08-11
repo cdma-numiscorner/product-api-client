@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  ProductApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -24,7 +24,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace ProductApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -32,16 +32,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use ProductApi\ApiException;
+use ProductApi\Configuration;
+use ProductApi\HeaderSelector;
+use ProductApi\ObjectSerializer;
 
 /**
  * CategoriesApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  ProductApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -120,9 +120,9 @@ class CategoriesApi
      *
      * @param  int $page The collection page number (optional, default to 1)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CategoriesRead[]
+     * @return \ProductApi\Model\CategoriesRead[]
      */
     public function getCategoriesCollection($page = 1)
     {
@@ -137,9 +137,9 @@ class CategoriesApi
      *
      * @param  int $page The collection page number (optional, default to 1)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CategoriesRead[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\CategoriesRead[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCategoriesCollectionWithHttpInfo($page = 1)
     {
@@ -176,20 +176,20 @@ class CategoriesApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CategoriesRead[]' === '\SplFileObject') {
+                    if ('\ProductApi\Model\CategoriesRead[]' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CategoriesRead[]', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\CategoriesRead[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\CategoriesRead[]';
+            $returnType = '\ProductApi\Model\CategoriesRead[]';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -208,7 +208,7 @@ class CategoriesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CategoriesRead[]',
+                        '\ProductApi\Model\CategoriesRead[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -250,7 +250,7 @@ class CategoriesApi
      */
     public function getCategoriesCollectionAsyncWithHttpInfo($page = 1)
     {
-        $returnType = '\OpenAPI\Client\Model\CategoriesRead[]';
+        $returnType = '\ProductApi\Model\CategoriesRead[]';
         $request = $this->getCategoriesCollectionRequest($page);
 
         return $this->client
@@ -380,9 +380,9 @@ class CategoriesApi
      *
      * @param  string $id Resource identifier (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CategoriesRead
+     * @return \ProductApi\Model\CategoriesRead
      */
     public function getCategoriesItem($id)
     {
@@ -397,9 +397,9 @@ class CategoriesApi
      *
      * @param  string $id Resource identifier (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CategoriesRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\CategoriesRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCategoriesItemWithHttpInfo($id)
     {
@@ -436,20 +436,20 @@ class CategoriesApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CategoriesRead' === '\SplFileObject') {
+                    if ('\ProductApi\Model\CategoriesRead' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CategoriesRead', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\CategoriesRead', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\CategoriesRead';
+            $returnType = '\ProductApi\Model\CategoriesRead';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -468,7 +468,7 @@ class CategoriesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CategoriesRead',
+                        '\ProductApi\Model\CategoriesRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -510,7 +510,7 @@ class CategoriesApi
      */
     public function getCategoriesItemAsyncWithHttpInfo($id)
     {
-        $returnType = '\OpenAPI\Client\Model\CategoriesRead';
+        $returnType = '\ProductApi\Model\CategoriesRead';
         $request = $this->getCategoriesItemRequest($id);
 
         return $this->client
@@ -645,11 +645,11 @@ class CategoriesApi
      *
      * Creates a Categories resource.
      *
-     * @param  \OpenAPI\Client\Model\CategoriesWrite $categories_write The new Categories resource (required)
+     * @param  \ProductApi\Model\CategoriesWrite $categories_write The new Categories resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CategoriesRead
+     * @return \ProductApi\Model\CategoriesRead
      */
     public function postCategoriesCollection($categories_write)
     {
@@ -662,11 +662,11 @@ class CategoriesApi
      *
      * Creates a Categories resource.
      *
-     * @param  \OpenAPI\Client\Model\CategoriesWrite $categories_write The new Categories resource (required)
+     * @param  \ProductApi\Model\CategoriesWrite $categories_write The new Categories resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CategoriesRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\CategoriesRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function postCategoriesCollectionWithHttpInfo($categories_write)
     {
@@ -703,20 +703,20 @@ class CategoriesApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 201:
-                    if ('\OpenAPI\Client\Model\CategoriesRead' === '\SplFileObject') {
+                    if ('\ProductApi\Model\CategoriesRead' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CategoriesRead', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\CategoriesRead', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\CategoriesRead';
+            $returnType = '\ProductApi\Model\CategoriesRead';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -735,7 +735,7 @@ class CategoriesApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CategoriesRead',
+                        '\ProductApi\Model\CategoriesRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -750,7 +750,7 @@ class CategoriesApi
      *
      * Creates a Categories resource.
      *
-     * @param  \OpenAPI\Client\Model\CategoriesWrite $categories_write The new Categories resource (required)
+     * @param  \ProductApi\Model\CategoriesWrite $categories_write The new Categories resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -770,14 +770,14 @@ class CategoriesApi
      *
      * Creates a Categories resource.
      *
-     * @param  \OpenAPI\Client\Model\CategoriesWrite $categories_write The new Categories resource (required)
+     * @param  \ProductApi\Model\CategoriesWrite $categories_write The new Categories resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function postCategoriesCollectionAsyncWithHttpInfo($categories_write)
     {
-        $returnType = '\OpenAPI\Client\Model\CategoriesRead';
+        $returnType = '\ProductApi\Model\CategoriesRead';
         $request = $this->postCategoriesCollectionRequest($categories_write);
 
         return $this->client
@@ -817,7 +817,7 @@ class CategoriesApi
     /**
      * Create request for operation 'postCategoriesCollection'
      *
-     * @param  \OpenAPI\Client\Model\CategoriesWrite $categories_write The new Categories resource (required)
+     * @param  \ProductApi\Model\CategoriesWrite $categories_write The new Categories resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -911,11 +911,11 @@ class CategoriesApi
      * Replaces the Categories resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\CategoriesWrite $categories_write The updated Categories resource (required)
+     * @param  \ProductApi\Model\CategoriesWrite $categories_write The updated Categories resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CategoriesRead
+     * @return \ProductApi\Model\CategoriesRead
      */
     public function putCategoriesItem($id, $categories_write)
     {
@@ -929,11 +929,11 @@ class CategoriesApi
      * Replaces the Categories resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\CategoriesWrite $categories_write The updated Categories resource (required)
+     * @param  \ProductApi\Model\CategoriesWrite $categories_write The updated Categories resource (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ProductApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CategoriesRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ProductApi\Model\CategoriesRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function putCategoriesItemWithHttpInfo($id, $categories_write)
     {
@@ -970,20 +970,20 @@ class CategoriesApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CategoriesRead' === '\SplFileObject') {
+                    if ('\ProductApi\Model\CategoriesRead' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CategoriesRead', []),
+                        ObjectSerializer::deserialize($content, '\ProductApi\Model\CategoriesRead', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\CategoriesRead';
+            $returnType = '\ProductApi\Model\CategoriesRead';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1002,7 +1002,7 @@ class CategoriesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CategoriesRead',
+                        '\ProductApi\Model\CategoriesRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1018,7 +1018,7 @@ class CategoriesApi
      * Replaces the Categories resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\CategoriesWrite $categories_write The updated Categories resource (required)
+     * @param  \ProductApi\Model\CategoriesWrite $categories_write The updated Categories resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1039,14 +1039,14 @@ class CategoriesApi
      * Replaces the Categories resource.
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\CategoriesWrite $categories_write The updated Categories resource (required)
+     * @param  \ProductApi\Model\CategoriesWrite $categories_write The updated Categories resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function putCategoriesItemAsyncWithHttpInfo($id, $categories_write)
     {
-        $returnType = '\OpenAPI\Client\Model\CategoriesRead';
+        $returnType = '\ProductApi\Model\CategoriesRead';
         $request = $this->putCategoriesItemRequest($id, $categories_write);
 
         return $this->client
@@ -1087,7 +1087,7 @@ class CategoriesApi
      * Create request for operation 'putCategoriesItem'
      *
      * @param  string $id Resource identifier (required)
-     * @param  \OpenAPI\Client\Model\CategoriesWrite $categories_write The updated Categories resource (required)
+     * @param  \ProductApi\Model\CategoriesWrite $categories_write The updated Categories resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
