@@ -61,7 +61,6 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
         'id' => 'int',
         'name' => 'string',
         'value' => 'string',
-        'product' => 'AnyOfProductsRead',
         'numiscorner_characteristic_id' => 'int'
     ];
 
@@ -76,7 +75,6 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
         'id' => null,
         'name' => null,
         'value' => null,
-        'product' => null,
         'numiscorner_characteristic_id' => null
     ];
 
@@ -110,7 +108,6 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
         'id' => 'id',
         'name' => 'name',
         'value' => 'value',
-        'product' => 'product',
         'numiscorner_characteristic_id' => 'numiscornerCharacteristicId'
     ];
 
@@ -123,7 +120,6 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
         'id' => 'setId',
         'name' => 'setName',
         'value' => 'setValue',
-        'product' => 'setProduct',
         'numiscorner_characteristic_id' => 'setNumiscornerCharacteristicId'
     ];
 
@@ -136,7 +132,6 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
         'id' => 'getId',
         'name' => 'getName',
         'value' => 'getValue',
-        'product' => 'getProduct',
         'numiscorner_characteristic_id' => 'getNumiscornerCharacteristicId'
     ];
 
@@ -203,7 +198,6 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['value'] = $data['value'] ?? null;
-        $this->container['product'] = $data['product'] ?? null;
         $this->container['numiscorner_characteristic_id'] = $data['numiscorner_characteristic_id'] ?? null;
     }
 
@@ -299,30 +293,6 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setValue($value)
     {
         $this->container['value'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets product
-     *
-     * @return AnyOfProductsRead|null
-     */
-    public function getProduct()
-    {
-        return $this->container['product'];
-    }
-
-    /**
-     * Sets product
-     *
-     * @param AnyOfProductsRead|null $product product
-     *
-     * @return self
-     */
-    public function setProduct($product)
-    {
-        $this->container['product'] = $product;
 
         return $this;
     }

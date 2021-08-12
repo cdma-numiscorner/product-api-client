@@ -1553,14 +1553,6 @@
             "type": "string",
             "nullable": true
           },
-          "product": {
-            "nullable": true,
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/products-Read"
-              }
-            ]
-          },
           "numiscornerCharacteristicId": {
             "type": "integer"
           }
@@ -1580,14 +1572,6 @@
           "value": {
             "type": "string",
             "nullable": true
-          },
-          "product": {
-            "nullable": true,
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/products-Write"
-              }
-            ]
           },
           "numiscornerCharacteristicId": {
             "type": "integer"
