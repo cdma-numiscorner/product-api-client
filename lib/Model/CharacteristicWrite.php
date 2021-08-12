@@ -61,7 +61,8 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'int',
         'name' => 'string',
         'value' => 'string',
-        'product' => 'string'
+        'product' => 'AnyOfProductsWrite',
+        'numiscorner_characteristic_id' => 'int'
     ];
 
     /**
@@ -75,7 +76,8 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => null,
         'name' => null,
         'value' => null,
-        'product' => 'iri-reference'
+        'product' => null,
+        'numiscorner_characteristic_id' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'id',
         'name' => 'name',
         'value' => 'value',
-        'product' => 'product'
+        'product' => 'product',
+        'numiscorner_characteristic_id' => 'numiscornerCharacteristicId'
     ];
 
     /**
@@ -120,7 +123,8 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'setId',
         'name' => 'setName',
         'value' => 'setValue',
-        'product' => 'setProduct'
+        'product' => 'setProduct',
+        'numiscorner_characteristic_id' => 'setNumiscornerCharacteristicId'
     ];
 
     /**
@@ -132,7 +136,8 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'getId',
         'name' => 'getName',
         'value' => 'getValue',
-        'product' => 'getProduct'
+        'product' => 'getProduct',
+        'numiscorner_characteristic_id' => 'getNumiscornerCharacteristicId'
     ];
 
     /**
@@ -199,6 +204,7 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['name'] = $data['name'] ?? null;
         $this->container['value'] = $data['value'] ?? null;
         $this->container['product'] = $data['product'] ?? null;
+        $this->container['numiscorner_characteristic_id'] = $data['numiscorner_characteristic_id'] ?? null;
     }
 
     /**
@@ -300,7 +306,7 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets product
      *
-     * @return string|null
+     * @return AnyOfProductsWrite|null
      */
     public function getProduct()
     {
@@ -310,13 +316,37 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets product
      *
-     * @param string|null $product product
+     * @param AnyOfProductsWrite|null $product product
      *
      * @return self
      */
     public function setProduct($product)
     {
         $this->container['product'] = $product;
+
+        return $this;
+    }
+
+    /**
+     * Gets numiscorner_characteristic_id
+     *
+     * @return int|null
+     */
+    public function getNumiscornerCharacteristicId()
+    {
+        return $this->container['numiscorner_characteristic_id'];
+    }
+
+    /**
+     * Sets numiscorner_characteristic_id
+     *
+     * @param int|null $numiscorner_characteristic_id numiscorner_characteristic_id
+     *
+     * @return self
+     */
+    public function setNumiscornerCharacteristicId($numiscorner_characteristic_id)
+    {
+        $this->container['numiscorner_characteristic_id'] = $numiscorner_characteristic_id;
 
         return $this;
     }

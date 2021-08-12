@@ -60,7 +60,6 @@ class CategoriesRead implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'name' => 'string',
         'slug' => 'string',
-        'level' => 'int',
         'parent_category' => 'AnyOfCategoriesRead'
     ];
 
@@ -74,7 +73,6 @@ class CategoriesRead implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'name' => null,
         'slug' => null,
-        'level' => null,
         'parent_category' => null
     ];
 
@@ -107,7 +105,6 @@ class CategoriesRead implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'name' => 'name',
         'slug' => 'slug',
-        'level' => 'level',
         'parent_category' => 'parentCategory'
     ];
 
@@ -119,7 +116,6 @@ class CategoriesRead implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'name' => 'setName',
         'slug' => 'setSlug',
-        'level' => 'setLevel',
         'parent_category' => 'setParentCategory'
     ];
 
@@ -131,7 +127,6 @@ class CategoriesRead implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'name' => 'getName',
         'slug' => 'getSlug',
-        'level' => 'getLevel',
         'parent_category' => 'getParentCategory'
     ];
 
@@ -197,7 +192,6 @@ class CategoriesRead implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['name'] = $data['name'] ?? null;
         $this->container['slug'] = $data['slug'] ?? null;
-        $this->container['level'] = $data['level'] ?? null;
         $this->container['parent_category'] = $data['parent_category'] ?? null;
     }
 
@@ -269,30 +263,6 @@ class CategoriesRead implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSlug($slug)
     {
         $this->container['slug'] = $slug;
-
-        return $this;
-    }
-
-    /**
-     * Gets level
-     *
-     * @return int|null
-     */
-    public function getLevel()
-    {
-        return $this->container['level'];
-    }
-
-    /**
-     * Sets level
-     *
-     * @param int|null $level level
-     *
-     * @return self
-     */
-    public function setLevel($level)
-    {
-        $this->container['level'] = $level;
 
         return $this;
     }

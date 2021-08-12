@@ -4,11 +4,67 @@ All URIs are relative to http://localhost.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**deleteCharacteristicItem()**](CharacteristicApi.md#deleteCharacteristicItem) | **DELETE** /api/characteristics/{id} | Removes the Characteristic resource.
 [**getCharacteristicCollection()**](CharacteristicApi.md#getCharacteristicCollection) | **GET** /api/characteristics | Retrieves the collection of Characteristic resources.
 [**getCharacteristicItem()**](CharacteristicApi.md#getCharacteristicItem) | **GET** /api/characteristics/{id} | Retrieves a Characteristic resource.
 [**postCharacteristicCollection()**](CharacteristicApi.md#postCharacteristicCollection) | **POST** /api/characteristics | Creates a Characteristic resource.
 [**putCharacteristicItem()**](CharacteristicApi.md#putCharacteristicItem) | **PUT** /api/characteristics/{id} | Replaces the Characteristic resource.
 
+
+## `deleteCharacteristicItem()`
+
+```php
+deleteCharacteristicItem($id)
+```
+
+Removes the Characteristic resource.
+
+Removes the Characteristic resource.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new ProductApi\Api\CharacteristicApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = 'id_example'; // string | Resource identifier
+
+try {
+    $apiInstance->deleteCharacteristicItem($id);
+} catch (Exception $e) {
+    echo 'Exception when calling CharacteristicApi->deleteCharacteristicItem: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Resource identifier |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `getCharacteristicCollection()`
 

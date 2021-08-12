@@ -478,6 +478,39 @@
         },
         "deprecated": false
       },
+      "delete": {
+        "operationId": "deleteCharacteristicItem",
+        "tags": [
+          "Characteristic"
+        ],
+        "responses": {
+          "204": {
+            "description": "Characteristic resource deleted"
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        },
+        "summary": "Removes the Characteristic resource.",
+        "description": "Removes the Characteristic resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Resource identifier",
+            "required": true,
+            "deprecated": false,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
+        "deprecated": false
+      },
       "parameters": []
     },
     "/api/product-types": {
@@ -776,6 +809,37 @@
             "allowReserved": false
           },
           {
+            "name": "sku",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "deprecated": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "form",
+            "explode": false,
+            "allowReserved": false
+          },
+          {
+            "name": "sku[]",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "deprecated": false,
+            "allowEmptyValue": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "style": "form",
+            "explode": true,
+            "allowReserved": false
+          },
+          {
             "name": "description",
             "in": "query",
             "description": "",
@@ -1056,6 +1120,39 @@
           },
           "required": true
         },
+        "deprecated": false
+      },
+      "delete": {
+        "operationId": "deleteProductsItem",
+        "tags": [
+          "products"
+        ],
+        "responses": {
+          "204": {
+            "description": "products resource deleted"
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        },
+        "summary": "Removes the products resource.",
+        "description": "Removes the products resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Resource identifier",
+            "required": true,
+            "deprecated": false,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple",
+            "explode": false,
+            "allowReserved": false
+          }
+        ],
         "deprecated": false
       },
       "parameters": []
@@ -1411,9 +1508,6 @@
           "slug": {
             "type": "string"
           },
-          "level": {
-            "type": "integer"
-          },
           "parentCategory": {
             "nullable": true,
             "anyOf": [
@@ -1433,9 +1527,6 @@
           },
           "slug": {
             "type": "string"
-          },
-          "level": {
-            "type": "integer"
           },
           "parentCategory": {
             "nullable": true,
@@ -1461,6 +1552,17 @@
           "value": {
             "type": "string",
             "nullable": true
+          },
+          "product": {
+            "nullable": true,
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/products-Read"
+              }
+            ]
+          },
+          "numiscornerCharacteristicId": {
+            "type": "integer"
           }
         }
       },
@@ -1480,9 +1582,15 @@
             "nullable": true
           },
           "product": {
-            "type": "string",
-            "format": "iri-reference",
-            "nullable": true
+            "nullable": true,
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/products-Write"
+              }
+            ]
+          },
+          "numiscornerCharacteristicId": {
+            "type": "integer"
           }
         }
       },
@@ -1575,6 +1683,12 @@
           },
           "description": {
             "type": "string"
+          },
+          "characteristics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Characteristic-Read"
+            }
           }
         },
         "required": [
@@ -1627,6 +1741,12 @@
           },
           "description": {
             "type": "string"
+          },
+          "characteristics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Characteristic-Write"
+            }
           }
         }
       }

@@ -77,6 +77,7 @@ Class | Method | HTTP request | Description
 *CategoriesApi* | [**getCategoriesItem**](docs/Api/CategoriesApi.md#getcategoriesitem) | **GET** /api/categories/{id} | Retrieves a Categories resource.
 *CategoriesApi* | [**postCategoriesCollection**](docs/Api/CategoriesApi.md#postcategoriescollection) | **POST** /api/categories | Creates a Categories resource.
 *CategoriesApi* | [**putCategoriesItem**](docs/Api/CategoriesApi.md#putcategoriesitem) | **PUT** /api/categories/{id} | Replaces the Categories resource.
+*CharacteristicApi* | [**deleteCharacteristicItem**](docs/Api/CharacteristicApi.md#deletecharacteristicitem) | **DELETE** /api/characteristics/{id} | Removes the Characteristic resource.
 *CharacteristicApi* | [**getCharacteristicCollection**](docs/Api/CharacteristicApi.md#getcharacteristiccollection) | **GET** /api/characteristics | Retrieves the collection of Characteristic resources.
 *CharacteristicApi* | [**getCharacteristicItem**](docs/Api/CharacteristicApi.md#getcharacteristicitem) | **GET** /api/characteristics/{id} | Retrieves a Characteristic resource.
 *CharacteristicApi* | [**postCharacteristicCollection**](docs/Api/CharacteristicApi.md#postcharacteristiccollection) | **POST** /api/characteristics | Creates a Characteristic resource.
@@ -85,6 +86,7 @@ Class | Method | HTTP request | Description
 *ProductTypeApi* | [**getProductTypeItem**](docs/Api/ProductTypeApi.md#getproducttypeitem) | **GET** /api/product-types/{id} | Retrieves a product-type resource.
 *ProductTypeApi* | [**postProductTypeCollection**](docs/Api/ProductTypeApi.md#postproducttypecollection) | **POST** /api/product-types | Creates a product-type resource.
 *ProductTypeApi* | [**putProductTypeItem**](docs/Api/ProductTypeApi.md#putproducttypeitem) | **PUT** /api/product-types/{id} | Replaces the product-type resource.
+*ProductsApi* | [**deleteProductsItem**](docs/Api/ProductsApi.md#deleteproductsitem) | **DELETE** /api/products/{id} | Removes the products resource.
 *ProductsApi* | [**getProductsCollection**](docs/Api/ProductsApi.md#getproductscollection) | **GET** /api/products | Retrieves the collection of products resources.
 *ProductsApi* | [**getProductsItem**](docs/Api/ProductsApi.md#getproductsitem) | **GET** /api/products/{id} | Retrieves a products resource.
 *ProductsApi* | [**postProductsCollection**](docs/Api/ProductsApi.md#postproductscollection) | **POST** /api/products | Creates a products resource.

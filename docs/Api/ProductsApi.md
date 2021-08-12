@@ -4,16 +4,72 @@ All URIs are relative to http://localhost.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**deleteProductsItem()**](ProductsApi.md#deleteProductsItem) | **DELETE** /api/products/{id} | Removes the products resource.
 [**getProductsCollection()**](ProductsApi.md#getProductsCollection) | **GET** /api/products | Retrieves the collection of products resources.
 [**getProductsItem()**](ProductsApi.md#getProductsItem) | **GET** /api/products/{id} | Retrieves a products resource.
 [**postProductsCollection()**](ProductsApi.md#postProductsCollection) | **POST** /api/products | Creates a products resource.
 [**putProductsItem()**](ProductsApi.md#putProductsItem) | **PUT** /api/products/{id} | Replaces the products resource.
 
 
+## `deleteProductsItem()`
+
+```php
+deleteProductsItem($id)
+```
+
+Removes the products resource.
+
+Removes the products resource.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new ProductApi\Api\ProductsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = 'id_example'; // string | Resource identifier
+
+try {
+    $apiInstance->deleteProductsItem($id);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductsApi->deleteProductsItem: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Resource identifier |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getProductsCollection()`
 
 ```php
-getProductsCollection($page, $title, $description, $quantity_between, $quantity_gt, $quantity_gte, $quantity_lt, $quantity_lte, $is_available): \ProductApi\Model\ProductsRead[]
+getProductsCollection($page, $title, $sku, $sku2, $description, $quantity_between, $quantity_gt, $quantity_gte, $quantity_lt, $quantity_lte, $is_available): \ProductApi\Model\ProductsRead[]
 ```
 
 Retrieves the collection of products resources.
@@ -35,6 +91,8 @@ $apiInstance = new ProductApi\Api\ProductsApi(
 );
 $page = 1; // int | The collection page number
 $title = 'title_example'; // string
+$sku = 'sku_example'; // string
+$sku2 = array('sku_example'); // string[]
 $description = 'description_example'; // string
 $quantity_between = 'quantity_between_example'; // string
 $quantity_gt = 'quantity_gt_example'; // string
@@ -44,7 +102,7 @@ $quantity_lte = 'quantity_lte_example'; // string
 $is_available = True; // bool
 
 try {
-    $result = $apiInstance->getProductsCollection($page, $title, $description, $quantity_between, $quantity_gt, $quantity_gte, $quantity_lt, $quantity_lte, $is_available);
+    $result = $apiInstance->getProductsCollection($page, $title, $sku, $sku2, $description, $quantity_between, $quantity_gt, $quantity_gte, $quantity_lt, $quantity_lte, $is_available);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->getProductsCollection: ', $e->getMessage(), PHP_EOL;
@@ -57,6 +115,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| The collection page number | [optional] [default to 1]
  **title** | **string**|  | [optional]
+ **sku** | **string**|  | [optional]
+ **sku2** | [**string[]**](../Model/string.md)|  | [optional]
  **description** | **string**|  | [optional]
  **quantity_between** | **string**|  | [optional]
  **quantity_gt** | **string**|  | [optional]

@@ -67,7 +67,8 @@ class ProductsWrite implements ModelInterface, ArrayAccess, \JsonSerializable
         'image_verso' => 'string',
         'category' => 'string',
         'is_available' => 'bool',
-        'description' => 'string'
+        'description' => 'string',
+        'characteristics' => '\ProductApi\Model\CharacteristicWrite[]'
     ];
 
     /**
@@ -87,7 +88,8 @@ class ProductsWrite implements ModelInterface, ArrayAccess, \JsonSerializable
         'image_verso' => null,
         'category' => 'iri-reference',
         'is_available' => null,
-        'description' => null
+        'description' => null,
+        'characteristics' => null
     ];
 
     /**
@@ -126,7 +128,8 @@ class ProductsWrite implements ModelInterface, ArrayAccess, \JsonSerializable
         'image_verso' => 'imageVerso',
         'category' => 'category',
         'is_available' => 'isAvailable',
-        'description' => 'description'
+        'description' => 'description',
+        'characteristics' => 'characteristics'
     ];
 
     /**
@@ -144,7 +147,8 @@ class ProductsWrite implements ModelInterface, ArrayAccess, \JsonSerializable
         'image_verso' => 'setImageVerso',
         'category' => 'setCategory',
         'is_available' => 'setIsAvailable',
-        'description' => 'setDescription'
+        'description' => 'setDescription',
+        'characteristics' => 'setCharacteristics'
     ];
 
     /**
@@ -162,7 +166,8 @@ class ProductsWrite implements ModelInterface, ArrayAccess, \JsonSerializable
         'image_verso' => 'getImageVerso',
         'category' => 'getCategory',
         'is_available' => 'getIsAvailable',
-        'description' => 'getDescription'
+        'description' => 'getDescription',
+        'characteristics' => 'getCharacteristics'
     ];
 
     /**
@@ -235,6 +240,7 @@ class ProductsWrite implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['category'] = $data['category'] ?? null;
         $this->container['is_available'] = $data['is_available'] ?? null;
         $this->container['description'] = $data['description'] ?? null;
+        $this->container['characteristics'] = $data['characteristics'] ?? null;
     }
 
     /**
@@ -512,6 +518,30 @@ class ProductsWrite implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDescription($description)
     {
         $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets characteristics
+     *
+     * @return \ProductApi\Model\CharacteristicWrite[]|null
+     */
+    public function getCharacteristics()
+    {
+        return $this->container['characteristics'];
+    }
+
+    /**
+     * Sets characteristics
+     *
+     * @param \ProductApi\Model\CharacteristicWrite[]|null $characteristics characteristics
+     *
+     * @return self
+     */
+    public function setCharacteristics($characteristics)
+    {
+        $this->container['characteristics'] = $characteristics;
 
         return $this;
     }

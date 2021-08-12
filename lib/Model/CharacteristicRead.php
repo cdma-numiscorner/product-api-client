@@ -60,7 +60,9 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'id' => 'int',
         'name' => 'string',
-        'value' => 'string'
+        'value' => 'string',
+        'product' => 'AnyOfProductsRead',
+        'numiscorner_characteristic_id' => 'int'
     ];
 
     /**
@@ -73,7 +75,9 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
-        'value' => null
+        'value' => null,
+        'product' => null,
+        'numiscorner_characteristic_id' => null
     ];
 
     /**
@@ -105,7 +109,9 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'value' => 'value'
+        'value' => 'value',
+        'product' => 'product',
+        'numiscorner_characteristic_id' => 'numiscornerCharacteristicId'
     ];
 
     /**
@@ -116,7 +122,9 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'value' => 'setValue'
+        'value' => 'setValue',
+        'product' => 'setProduct',
+        'numiscorner_characteristic_id' => 'setNumiscornerCharacteristicId'
     ];
 
     /**
@@ -127,7 +135,9 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'value' => 'getValue'
+        'value' => 'getValue',
+        'product' => 'getProduct',
+        'numiscorner_characteristic_id' => 'getNumiscornerCharacteristicId'
     ];
 
     /**
@@ -193,6 +203,8 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['value'] = $data['value'] ?? null;
+        $this->container['product'] = $data['product'] ?? null;
+        $this->container['numiscorner_characteristic_id'] = $data['numiscorner_characteristic_id'] ?? null;
     }
 
     /**
@@ -287,6 +299,54 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setValue($value)
     {
         $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets product
+     *
+     * @return AnyOfProductsRead|null
+     */
+    public function getProduct()
+    {
+        return $this->container['product'];
+    }
+
+    /**
+     * Sets product
+     *
+     * @param AnyOfProductsRead|null $product product
+     *
+     * @return self
+     */
+    public function setProduct($product)
+    {
+        $this->container['product'] = $product;
+
+        return $this;
+    }
+
+    /**
+     * Gets numiscorner_characteristic_id
+     *
+     * @return int|null
+     */
+    public function getNumiscornerCharacteristicId()
+    {
+        return $this->container['numiscorner_characteristic_id'];
+    }
+
+    /**
+     * Sets numiscorner_characteristic_id
+     *
+     * @param int|null $numiscorner_characteristic_id numiscorner_characteristic_id
+     *
+     * @return self
+     */
+    public function setNumiscornerCharacteristicId($numiscorner_characteristic_id)
+    {
+        $this->container['numiscorner_characteristic_id'] = $numiscorner_characteristic_id;
 
         return $this;
     }

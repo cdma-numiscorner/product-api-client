@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **category** | [**\ProductApi\Model\CategoriesRead**](CategoriesRead.md) |  | [optional]
 **is_available** | **bool** |  | [optional]
 **description** | **string** |  | [optional]
+**characteristics** | [**\ProductApi\Model\CharacteristicRead[]**](CharacteristicRead.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
