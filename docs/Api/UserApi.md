@@ -20,8 +20,6 @@ deleteUserItem($id)
 
 Removes the User resource.
 
-Removes the User resource.
-
 ### Example
 
 ```php
@@ -35,7 +33,7 @@ $apiInstance = new ProductApi\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 'id_example'; // string | Resource identifier
+$id = 'id_example'; // string
 
 try {
     $apiInstance->deleteUserItem($id);
@@ -48,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Resource identifier |
+ **id** | **string**|  |
 
 ### Return type
 
@@ -75,8 +73,6 @@ getUserCollection($page): \ProductApi\Model\UserUserRead[]
 
 Retrieves the collection of User resources.
 
-Retrieves the collection of User resources.
-
 ### Example
 
 ```php
@@ -90,7 +86,7 @@ $apiInstance = new ProductApi\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$page = 1; // int | The collection page number
+$page = 56; // int | The collection page number
 
 try {
     $result = $apiInstance->getUserCollection($page);
@@ -104,7 +100,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The collection page number | [optional] [default to 1]
+ **page** | **int**| The collection page number | [optional]
 
 ### Return type
 
@@ -131,8 +127,6 @@ getUserItem($id): \ProductApi\Model\UserUserRead
 
 Retrieves a User resource.
 
-Retrieves a User resource.
-
 ### Example
 
 ```php
@@ -146,7 +140,7 @@ $apiInstance = new ProductApi\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 'id_example'; // string | Resource identifier
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->getUserItem($id);
@@ -160,7 +154,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Resource identifier |
+ **id** | **string**|  |
 
 ### Return type
 
@@ -182,10 +176,8 @@ No authorization required
 ## `patchUserItem()`
 
 ```php
-patchUserItem($id, $user_user_write): \ProductApi\Model\UserUserRead
+patchUserItem($id, $user): \ProductApi\Model\UserUserRead
 ```
-
-Updates the User resource.
 
 Updates the User resource.
 
@@ -202,11 +194,11 @@ $apiInstance = new ProductApi\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 'id_example'; // string | Resource identifier
-$user_user_write = new \ProductApi\Model\UserUserWrite(); // \ProductApi\Model\UserUserWrite | The updated User resource
+$id = 'id_example'; // string
+$user = new \ProductApi\Model\UserUserWrite(); // \ProductApi\Model\UserUserWrite | The updated User resource
 
 try {
-    $result = $apiInstance->patchUserItem($id, $user_user_write);
+    $result = $apiInstance->patchUserItem($id, $user);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->patchUserItem: ', $e->getMessage(), PHP_EOL;
@@ -217,8 +209,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Resource identifier |
- **user_user_write** | [**\ProductApi\Model\UserUserWrite**](../Model/UserUserWrite.md)| The updated User resource |
+ **id** | **string**|  |
+ **user** | [**\ProductApi\Model\UserUserWrite**](../Model/UserUserWrite.md)| The updated User resource | [optional]
 
 ### Return type
 
@@ -240,10 +232,8 @@ No authorization required
 ## `postUserCollection()`
 
 ```php
-postUserCollection($user_user_write): \ProductApi\Model\UserUserRead
+postUserCollection($user): \ProductApi\Model\UserUserRead
 ```
-
-Creates a User resource.
 
 Creates a User resource.
 
@@ -260,10 +250,10 @@ $apiInstance = new ProductApi\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$user_user_write = new \ProductApi\Model\UserUserWrite(); // \ProductApi\Model\UserUserWrite | The new User resource
+$user = new \ProductApi\Model\UserUserWrite(); // \ProductApi\Model\UserUserWrite | The new User resource
 
 try {
-    $result = $apiInstance->postUserCollection($user_user_write);
+    $result = $apiInstance->postUserCollection($user);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->postUserCollection: ', $e->getMessage(), PHP_EOL;
@@ -274,7 +264,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_user_write** | [**\ProductApi\Model\UserUserWrite**](../Model/UserUserWrite.md)| The new User resource |
+ **user** | [**\ProductApi\Model\UserUserWrite**](../Model/UserUserWrite.md)| The new User resource | [optional]
 
 ### Return type
 
@@ -296,10 +286,8 @@ No authorization required
 ## `putUserItem()`
 
 ```php
-putUserItem($id, $user_user_write): \ProductApi\Model\UserUserRead
+putUserItem($id, $user): \ProductApi\Model\UserUserRead
 ```
-
-Replaces the User resource.
 
 Replaces the User resource.
 
@@ -316,11 +304,11 @@ $apiInstance = new ProductApi\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 'id_example'; // string | Resource identifier
-$user_user_write = new \ProductApi\Model\UserUserWrite(); // \ProductApi\Model\UserUserWrite | The updated User resource
+$id = 'id_example'; // string
+$user = new \ProductApi\Model\UserUserWrite(); // \ProductApi\Model\UserUserWrite | The updated User resource
 
 try {
-    $result = $apiInstance->putUserItem($id, $user_user_write);
+    $result = $apiInstance->putUserItem($id, $user);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->putUserItem: ', $e->getMessage(), PHP_EOL;
@@ -331,8 +319,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Resource identifier |
- **user_user_write** | [**\ProductApi\Model\UserUserWrite**](../Model/UserUserWrite.md)| The updated User resource |
+ **id** | **string**|  |
+ **user** | [**\ProductApi\Model\UserUserWrite**](../Model/UserUserWrite.md)| The updated User resource | [optional]
 
 ### Return type
 

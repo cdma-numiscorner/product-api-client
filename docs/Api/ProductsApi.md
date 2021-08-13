@@ -19,8 +19,6 @@ deleteProductsItem($id)
 
 Removes the products resource.
 
-Removes the products resource.
-
 ### Example
 
 ```php
@@ -34,7 +32,7 @@ $apiInstance = new ProductApi\Api\ProductsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 'id_example'; // string | Resource identifier
+$id = 'id_example'; // string
 
 try {
     $apiInstance->deleteProductsItem($id);
@@ -47,7 +45,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Resource identifier |
+ **id** | **string**|  |
 
 ### Return type
 
@@ -69,10 +67,8 @@ No authorization required
 ## `getProductsCollection()`
 
 ```php
-getProductsCollection($page, $title, $sku, $sku2, $description, $quantity_between, $quantity_gt, $quantity_gte, $quantity_lt, $quantity_lte, $is_available): \ProductApi\Model\ProductsRead[]
+getProductsCollection($title, $sku, $sku2, $description, $quantity_between, $quantity_gt, $quantity_gte, $quantity_lt, $quantity_lte, $is_available, $page): \ProductApi\Model\ProductsRead[]
 ```
-
-Retrieves the collection of products resources.
 
 Retrieves the collection of products resources.
 
@@ -89,7 +85,6 @@ $apiInstance = new ProductApi\Api\ProductsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$page = 1; // int | The collection page number
 $title = 'title_example'; // string
 $sku = 'sku_example'; // string
 $sku2 = array('sku_example'); // string[]
@@ -100,9 +95,10 @@ $quantity_gte = 'quantity_gte_example'; // string
 $quantity_lt = 'quantity_lt_example'; // string
 $quantity_lte = 'quantity_lte_example'; // string
 $is_available = True; // bool
+$page = 56; // int | The collection page number
 
 try {
-    $result = $apiInstance->getProductsCollection($page, $title, $sku, $sku2, $description, $quantity_between, $quantity_gt, $quantity_gte, $quantity_lt, $quantity_lte, $is_available);
+    $result = $apiInstance->getProductsCollection($title, $sku, $sku2, $description, $quantity_between, $quantity_gt, $quantity_gte, $quantity_lt, $quantity_lte, $is_available, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->getProductsCollection: ', $e->getMessage(), PHP_EOL;
@@ -113,7 +109,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The collection page number | [optional] [default to 1]
  **title** | **string**|  | [optional]
  **sku** | **string**|  | [optional]
  **sku2** | [**string[]**](../Model/string.md)|  | [optional]
@@ -124,6 +119,7 @@ Name | Type | Description  | Notes
  **quantity_lt** | **string**|  | [optional]
  **quantity_lte** | **string**|  | [optional]
  **is_available** | **bool**|  | [optional]
+ **page** | **int**| The collection page number | [optional]
 
 ### Return type
 
@@ -150,8 +146,6 @@ getProductsItem($id): \ProductApi\Model\ProductsRead
 
 Retrieves a products resource.
 
-Retrieves a products resource.
-
 ### Example
 
 ```php
@@ -165,7 +159,7 @@ $apiInstance = new ProductApi\Api\ProductsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 'id_example'; // string | Resource identifier
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->getProductsItem($id);
@@ -179,7 +173,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Resource identifier |
+ **id** | **string**|  |
 
 ### Return type
 
@@ -201,10 +195,8 @@ No authorization required
 ## `postProductsCollection()`
 
 ```php
-postProductsCollection($products_write): \ProductApi\Model\ProductsRead
+postProductsCollection($products): \ProductApi\Model\ProductsRead
 ```
-
-Creates a products resource.
 
 Creates a products resource.
 
@@ -221,10 +213,10 @@ $apiInstance = new ProductApi\Api\ProductsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$products_write = new \ProductApi\Model\ProductsWrite(); // \ProductApi\Model\ProductsWrite | The new products resource
+$products = new \ProductApi\Model\ProductsWrite(); // \ProductApi\Model\ProductsWrite | The new products resource
 
 try {
-    $result = $apiInstance->postProductsCollection($products_write);
+    $result = $apiInstance->postProductsCollection($products);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->postProductsCollection: ', $e->getMessage(), PHP_EOL;
@@ -235,7 +227,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **products_write** | [**\ProductApi\Model\ProductsWrite**](../Model/ProductsWrite.md)| The new products resource |
+ **products** | [**\ProductApi\Model\ProductsWrite**](../Model/ProductsWrite.md)| The new products resource | [optional]
 
 ### Return type
 
@@ -257,10 +249,8 @@ No authorization required
 ## `putProductsItem()`
 
 ```php
-putProductsItem($id, $products_write): \ProductApi\Model\ProductsRead
+putProductsItem($id, $products): \ProductApi\Model\ProductsRead
 ```
-
-Replaces the products resource.
 
 Replaces the products resource.
 
@@ -277,11 +267,11 @@ $apiInstance = new ProductApi\Api\ProductsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 'id_example'; // string | Resource identifier
-$products_write = new \ProductApi\Model\ProductsWrite(); // \ProductApi\Model\ProductsWrite | The updated products resource
+$id = 'id_example'; // string
+$products = new \ProductApi\Model\ProductsWrite(); // \ProductApi\Model\ProductsWrite | The updated products resource
 
 try {
-    $result = $apiInstance->putProductsItem($id, $products_write);
+    $result = $apiInstance->putProductsItem($id, $products);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->putProductsItem: ', $e->getMessage(), PHP_EOL;
@@ -292,8 +282,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Resource identifier |
- **products_write** | [**\ProductApi\Model\ProductsWrite**](../Model/ProductsWrite.md)| The updated products resource |
+ **id** | **string**|  |
+ **products** | [**\ProductApi\Model\ProductsWrite**](../Model/ProductsWrite.md)| The updated products resource | [optional]
 
 ### Return type
 

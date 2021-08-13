@@ -19,8 +19,6 @@ deleteCharacteristicItem($id)
 
 Removes the Characteristic resource.
 
-Removes the Characteristic resource.
-
 ### Example
 
 ```php
@@ -34,7 +32,7 @@ $apiInstance = new ProductApi\Api\CharacteristicApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 'id_example'; // string | Resource identifier
+$id = 'id_example'; // string
 
 try {
     $apiInstance->deleteCharacteristicItem($id);
@@ -47,7 +45,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Resource identifier |
+ **id** | **string**|  |
 
 ### Return type
 
@@ -74,8 +72,6 @@ getCharacteristicCollection($page): \ProductApi\Model\CharacteristicRead[]
 
 Retrieves the collection of Characteristic resources.
 
-Retrieves the collection of Characteristic resources.
-
 ### Example
 
 ```php
@@ -89,7 +85,7 @@ $apiInstance = new ProductApi\Api\CharacteristicApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$page = 1; // int | The collection page number
+$page = 56; // int | The collection page number
 
 try {
     $result = $apiInstance->getCharacteristicCollection($page);
@@ -103,7 +99,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The collection page number | [optional] [default to 1]
+ **page** | **int**| The collection page number | [optional]
 
 ### Return type
 
@@ -130,8 +126,6 @@ getCharacteristicItem($id): \ProductApi\Model\CharacteristicRead
 
 Retrieves a Characteristic resource.
 
-Retrieves a Characteristic resource.
-
 ### Example
 
 ```php
@@ -145,7 +139,7 @@ $apiInstance = new ProductApi\Api\CharacteristicApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 'id_example'; // string | Resource identifier
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->getCharacteristicItem($id);
@@ -159,7 +153,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Resource identifier |
+ **id** | **string**|  |
 
 ### Return type
 
@@ -181,10 +175,8 @@ No authorization required
 ## `postCharacteristicCollection()`
 
 ```php
-postCharacteristicCollection($characteristic_write): \ProductApi\Model\CharacteristicRead
+postCharacteristicCollection($characteristic): \ProductApi\Model\CharacteristicRead
 ```
-
-Creates a Characteristic resource.
 
 Creates a Characteristic resource.
 
@@ -201,10 +193,10 @@ $apiInstance = new ProductApi\Api\CharacteristicApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$characteristic_write = new \ProductApi\Model\CharacteristicWrite(); // \ProductApi\Model\CharacteristicWrite | The new Characteristic resource
+$characteristic = new \ProductApi\Model\CharacteristicWrite(); // \ProductApi\Model\CharacteristicWrite | The new Characteristic resource
 
 try {
-    $result = $apiInstance->postCharacteristicCollection($characteristic_write);
+    $result = $apiInstance->postCharacteristicCollection($characteristic);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CharacteristicApi->postCharacteristicCollection: ', $e->getMessage(), PHP_EOL;
@@ -215,7 +207,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characteristic_write** | [**\ProductApi\Model\CharacteristicWrite**](../Model/CharacteristicWrite.md)| The new Characteristic resource |
+ **characteristic** | [**\ProductApi\Model\CharacteristicWrite**](../Model/CharacteristicWrite.md)| The new Characteristic resource | [optional]
 
 ### Return type
 
@@ -237,10 +229,8 @@ No authorization required
 ## `putCharacteristicItem()`
 
 ```php
-putCharacteristicItem($id, $characteristic_write): \ProductApi\Model\CharacteristicRead
+putCharacteristicItem($id, $characteristic): \ProductApi\Model\CharacteristicRead
 ```
-
-Replaces the Characteristic resource.
 
 Replaces the Characteristic resource.
 
@@ -257,11 +247,11 @@ $apiInstance = new ProductApi\Api\CharacteristicApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 'id_example'; // string | Resource identifier
-$characteristic_write = new \ProductApi\Model\CharacteristicWrite(); // \ProductApi\Model\CharacteristicWrite | The updated Characteristic resource
+$id = 'id_example'; // string
+$characteristic = new \ProductApi\Model\CharacteristicWrite(); // \ProductApi\Model\CharacteristicWrite | The updated Characteristic resource
 
 try {
-    $result = $apiInstance->putCharacteristicItem($id, $characteristic_write);
+    $result = $apiInstance->putCharacteristicItem($id, $characteristic);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CharacteristicApi->putCharacteristicItem: ', $e->getMessage(), PHP_EOL;
@@ -272,8 +262,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Resource identifier |
- **characteristic_write** | [**\ProductApi\Model\CharacteristicWrite**](../Model/CharacteristicWrite.md)| The updated Characteristic resource |
+ **id** | **string**|  |
+ **characteristic** | [**\ProductApi\Model\CharacteristicWrite**](../Model/CharacteristicWrite.md)| The updated Characteristic resource | [optional]
 
 ### Return type
 

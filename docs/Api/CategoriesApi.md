@@ -18,8 +18,6 @@ getCategoriesCollection($page): \ProductApi\Model\CategoriesRead[]
 
 Retrieves the collection of Categories resources.
 
-Retrieves the collection of Categories resources.
-
 ### Example
 
 ```php
@@ -33,7 +31,7 @@ $apiInstance = new ProductApi\Api\CategoriesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$page = 1; // int | The collection page number
+$page = 56; // int | The collection page number
 
 try {
     $result = $apiInstance->getCategoriesCollection($page);
@@ -47,7 +45,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The collection page number | [optional] [default to 1]
+ **page** | **int**| The collection page number | [optional]
 
 ### Return type
 
@@ -74,8 +72,6 @@ getCategoriesItem($id): \ProductApi\Model\CategoriesRead
 
 Retrieves a Categories resource.
 
-Retrieves a Categories resource.
-
 ### Example
 
 ```php
@@ -89,7 +85,7 @@ $apiInstance = new ProductApi\Api\CategoriesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 'id_example'; // string | Resource identifier
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->getCategoriesItem($id);
@@ -103,7 +99,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Resource identifier |
+ **id** | **string**|  |
 
 ### Return type
 
@@ -125,10 +121,8 @@ No authorization required
 ## `postCategoriesCollection()`
 
 ```php
-postCategoriesCollection($categories_write): \ProductApi\Model\CategoriesRead
+postCategoriesCollection($categories): \ProductApi\Model\CategoriesRead
 ```
-
-Creates a Categories resource.
 
 Creates a Categories resource.
 
@@ -145,10 +139,10 @@ $apiInstance = new ProductApi\Api\CategoriesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$categories_write = new \ProductApi\Model\CategoriesWrite(); // \ProductApi\Model\CategoriesWrite | The new Categories resource
+$categories = new \ProductApi\Model\CategoriesWrite(); // \ProductApi\Model\CategoriesWrite | The new Categories resource
 
 try {
-    $result = $apiInstance->postCategoriesCollection($categories_write);
+    $result = $apiInstance->postCategoriesCollection($categories);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoriesApi->postCategoriesCollection: ', $e->getMessage(), PHP_EOL;
@@ -159,7 +153,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categories_write** | [**\ProductApi\Model\CategoriesWrite**](../Model/CategoriesWrite.md)| The new Categories resource |
+ **categories** | [**\ProductApi\Model\CategoriesWrite**](../Model/CategoriesWrite.md)| The new Categories resource | [optional]
 
 ### Return type
 
@@ -181,10 +175,8 @@ No authorization required
 ## `putCategoriesItem()`
 
 ```php
-putCategoriesItem($id, $categories_write): \ProductApi\Model\CategoriesRead
+putCategoriesItem($id, $categories): \ProductApi\Model\CategoriesRead
 ```
-
-Replaces the Categories resource.
 
 Replaces the Categories resource.
 
@@ -201,11 +193,11 @@ $apiInstance = new ProductApi\Api\CategoriesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 'id_example'; // string | Resource identifier
-$categories_write = new \ProductApi\Model\CategoriesWrite(); // \ProductApi\Model\CategoriesWrite | The updated Categories resource
+$id = 'id_example'; // string
+$categories = new \ProductApi\Model\CategoriesWrite(); // \ProductApi\Model\CategoriesWrite | The updated Categories resource
 
 try {
-    $result = $apiInstance->putCategoriesItem($id, $categories_write);
+    $result = $apiInstance->putCategoriesItem($id, $categories);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoriesApi->putCategoriesItem: ', $e->getMessage(), PHP_EOL;
@@ -216,8 +208,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Resource identifier |
- **categories_write** | [**\ProductApi\Model\CategoriesWrite**](../Model/CategoriesWrite.md)| The updated Categories resource |
+ **id** | **string**|  |
+ **categories** | [**\ProductApi\Model\CategoriesWrite**](../Model/CategoriesWrite.md)| The updated Categories resource | [optional]
 
 ### Return type
 

@@ -18,8 +18,6 @@ getProductTypeCollection($page): \ProductApi\Model\ProductTypeRead[]
 
 Retrieves the collection of product-type resources.
 
-Retrieves the collection of product-type resources.
-
 ### Example
 
 ```php
@@ -33,7 +31,7 @@ $apiInstance = new ProductApi\Api\ProductTypeApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$page = 1; // int | The collection page number
+$page = 56; // int | The collection page number
 
 try {
     $result = $apiInstance->getProductTypeCollection($page);
@@ -47,7 +45,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The collection page number | [optional] [default to 1]
+ **page** | **int**| The collection page number | [optional]
 
 ### Return type
 
@@ -74,8 +72,6 @@ getProductTypeItem($id): \ProductApi\Model\ProductTypeRead
 
 Retrieves a product-type resource.
 
-Retrieves a product-type resource.
-
 ### Example
 
 ```php
@@ -89,7 +85,7 @@ $apiInstance = new ProductApi\Api\ProductTypeApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 'id_example'; // string | Resource identifier
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->getProductTypeItem($id);
@@ -103,7 +99,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Resource identifier |
+ **id** | **string**|  |
 
 ### Return type
 
@@ -125,10 +121,8 @@ No authorization required
 ## `postProductTypeCollection()`
 
 ```php
-postProductTypeCollection($product_type_write): \ProductApi\Model\ProductTypeRead
+postProductTypeCollection($product_type): \ProductApi\Model\ProductTypeRead
 ```
-
-Creates a product-type resource.
 
 Creates a product-type resource.
 
@@ -145,10 +139,10 @@ $apiInstance = new ProductApi\Api\ProductTypeApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$product_type_write = new \ProductApi\Model\ProductTypeWrite(); // \ProductApi\Model\ProductTypeWrite | The new product-type resource
+$product_type = new \ProductApi\Model\ProductTypeWrite(); // \ProductApi\Model\ProductTypeWrite | The new product-type resource
 
 try {
-    $result = $apiInstance->postProductTypeCollection($product_type_write);
+    $result = $apiInstance->postProductTypeCollection($product_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductTypeApi->postProductTypeCollection: ', $e->getMessage(), PHP_EOL;
@@ -159,7 +153,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_type_write** | [**\ProductApi\Model\ProductTypeWrite**](../Model/ProductTypeWrite.md)| The new product-type resource |
+ **product_type** | [**\ProductApi\Model\ProductTypeWrite**](../Model/ProductTypeWrite.md)| The new product-type resource | [optional]
 
 ### Return type
 
@@ -181,10 +175,8 @@ No authorization required
 ## `putProductTypeItem()`
 
 ```php
-putProductTypeItem($id, $product_type_write): \ProductApi\Model\ProductTypeRead
+putProductTypeItem($id, $product_type): \ProductApi\Model\ProductTypeRead
 ```
-
-Replaces the product-type resource.
 
 Replaces the product-type resource.
 
@@ -201,11 +193,11 @@ $apiInstance = new ProductApi\Api\ProductTypeApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 'id_example'; // string | Resource identifier
-$product_type_write = new \ProductApi\Model\ProductTypeWrite(); // \ProductApi\Model\ProductTypeWrite | The updated product-type resource
+$id = 'id_example'; // string
+$product_type = new \ProductApi\Model\ProductTypeWrite(); // \ProductApi\Model\ProductTypeWrite | The updated product-type resource
 
 try {
-    $result = $apiInstance->putProductTypeItem($id, $product_type_write);
+    $result = $apiInstance->putProductTypeItem($id, $product_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductTypeApi->putProductTypeItem: ', $e->getMessage(), PHP_EOL;
@@ -216,8 +208,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Resource identifier |
- **product_type_write** | [**\ProductApi\Model\ProductTypeWrite**](../Model/ProductTypeWrite.md)| The updated product-type resource |
+ **id** | **string**|  |
+ **product_type** | [**\ProductApi\Model\ProductTypeWrite**](../Model/ProductTypeWrite.md)| The updated product-type resource | [optional]
 
 ### Return type
 

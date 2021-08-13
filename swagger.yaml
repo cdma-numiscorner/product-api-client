@@ -1,0 +1,835 @@
+swagger: '2.0'
+basePath: /
+info:
+  title: ''
+  version: 0.0.0
+paths:
+  /api/categories:
+    get:
+      tags:
+        - Categories
+      operationId: getCategoriesCollection
+      produces:
+        - application/json
+        - text/html
+      summary: 'Retrieves the collection of Categories resources.'
+      responses:
+        200:
+          description: 'Categories collection response'
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Categories-Read'
+      parameters:
+        -
+          name: page
+          in: query
+          required: false
+          description: 'The collection page number'
+          type: integer
+    post:
+      tags:
+        - Categories
+      operationId: postCategoriesCollection
+      consumes:
+        - application/json
+        - text/html
+      produces:
+        - application/json
+        - text/html
+      summary: 'Creates a Categories resource.'
+      responses:
+        201:
+          description: 'Categories resource created'
+          schema:
+            $ref: '#/definitions/Categories-Read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+        422:
+          description: 'Unprocessable entity'
+      parameters:
+        -
+          name: categories
+          in: body
+          description: 'The new Categories resource'
+          schema:
+            $ref: '#/definitions/Categories-Write'
+  '/api/categories/{id}':
+    get:
+      tags:
+        - Categories
+      operationId: getCategoriesItem
+      produces:
+        - application/json
+        - text/html
+      summary: 'Retrieves a Categories resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: 'Categories resource response'
+          schema:
+            $ref: '#/definitions/Categories-Read'
+        404:
+          description: 'Resource not found'
+    put:
+      tags:
+        - Categories
+      operationId: putCategoriesItem
+      consumes:
+        - application/json
+        - text/html
+      produces:
+        - application/json
+        - text/html
+      summary: 'Replaces the Categories resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          type: string
+        -
+          name: categories
+          in: body
+          description: 'The updated Categories resource'
+          schema:
+            $ref: '#/definitions/Categories-Write'
+      responses:
+        200:
+          description: 'Categories resource updated'
+          schema:
+            $ref: '#/definitions/Categories-Read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+        422:
+          description: 'Unprocessable entity'
+  /api/characteristics:
+    get:
+      tags:
+        - Characteristic
+      operationId: getCharacteristicCollection
+      produces:
+        - application/json
+        - text/html
+      summary: 'Retrieves the collection of Characteristic resources.'
+      responses:
+        200:
+          description: 'Characteristic collection response'
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Characteristic-Read'
+      parameters:
+        -
+          name: page
+          in: query
+          required: false
+          description: 'The collection page number'
+          type: integer
+    post:
+      tags:
+        - Characteristic
+      operationId: postCharacteristicCollection
+      consumes:
+        - application/json
+        - text/html
+      produces:
+        - application/json
+        - text/html
+      summary: 'Creates a Characteristic resource.'
+      responses:
+        201:
+          description: 'Characteristic resource created'
+          schema:
+            $ref: '#/definitions/Characteristic-Read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+        422:
+          description: 'Unprocessable entity'
+      parameters:
+        -
+          name: characteristic
+          in: body
+          description: 'The new Characteristic resource'
+          schema:
+            $ref: '#/definitions/Characteristic-Write'
+  '/api/characteristics/{id}':
+    get:
+      tags:
+        - Characteristic
+      operationId: getCharacteristicItem
+      produces:
+        - application/json
+        - text/html
+      summary: 'Retrieves a Characteristic resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: 'Characteristic resource response'
+          schema:
+            $ref: '#/definitions/Characteristic-Read'
+        404:
+          description: 'Resource not found'
+    put:
+      tags:
+        - Characteristic
+      operationId: putCharacteristicItem
+      consumes:
+        - application/json
+        - text/html
+      produces:
+        - application/json
+        - text/html
+      summary: 'Replaces the Characteristic resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          type: string
+        -
+          name: characteristic
+          in: body
+          description: 'The updated Characteristic resource'
+          schema:
+            $ref: '#/definitions/Characteristic-Write'
+      responses:
+        200:
+          description: 'Characteristic resource updated'
+          schema:
+            $ref: '#/definitions/Characteristic-Read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+        422:
+          description: 'Unprocessable entity'
+    delete:
+      tags:
+        - Characteristic
+      operationId: deleteCharacteristicItem
+      summary: 'Removes the Characteristic resource.'
+      responses:
+        204:
+          description: 'Characteristic resource deleted'
+        404:
+          description: 'Resource not found'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          type: string
+  /api/product-types:
+    get:
+      tags:
+        - product-type
+      operationId: getProduct-typeCollection
+      produces:
+        - application/json
+        - text/html
+      summary: 'Retrieves the collection of product-type resources.'
+      responses:
+        200:
+          description: 'product-type collection response'
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/product-type-Read'
+      parameters:
+        -
+          name: page
+          in: query
+          required: false
+          description: 'The collection page number'
+          type: integer
+    post:
+      tags:
+        - product-type
+      operationId: postProduct-typeCollection
+      consumes:
+        - application/json
+        - text/html
+      produces:
+        - application/json
+        - text/html
+      summary: 'Creates a product-type resource.'
+      responses:
+        201:
+          description: 'product-type resource created'
+          schema:
+            $ref: '#/definitions/product-type-Read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+        422:
+          description: 'Unprocessable entity'
+      parameters:
+        -
+          name: product-type
+          in: body
+          description: 'The new product-type resource'
+          schema:
+            $ref: '#/definitions/product-type-Write'
+  '/api/product-types/{id}':
+    get:
+      tags:
+        - product-type
+      operationId: getProduct-typeItem
+      produces:
+        - application/json
+        - text/html
+      summary: 'Retrieves a product-type resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: 'product-type resource response'
+          schema:
+            $ref: '#/definitions/product-type-Read'
+        404:
+          description: 'Resource not found'
+    put:
+      tags:
+        - product-type
+      operationId: putProduct-typeItem
+      consumes:
+        - application/json
+        - text/html
+      produces:
+        - application/json
+        - text/html
+      summary: 'Replaces the product-type resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          type: string
+        -
+          name: product-type
+          in: body
+          description: 'The updated product-type resource'
+          schema:
+            $ref: '#/definitions/product-type-Write'
+      responses:
+        200:
+          description: 'product-type resource updated'
+          schema:
+            $ref: '#/definitions/product-type-Read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+        422:
+          description: 'Unprocessable entity'
+  /api/products:
+    get:
+      tags:
+        - products
+      operationId: getProductsCollection
+      produces:
+        - application/json
+        - text/html
+      summary: 'Retrieves the collection of products resources.'
+      responses:
+        200:
+          description: 'products collection response'
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/products-Read'
+      parameters:
+        -
+          name: title
+          in: query
+          required: false
+          type: string
+        -
+          name: sku
+          in: query
+          required: false
+          type: string
+        -
+          name: 'sku[]'
+          in: query
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+        -
+          name: description
+          in: query
+          required: false
+          type: string
+        -
+          name: 'quantity[between]'
+          in: query
+          required: false
+          type: string
+        -
+          name: 'quantity[gt]'
+          in: query
+          required: false
+          type: string
+        -
+          name: 'quantity[gte]'
+          in: query
+          required: false
+          type: string
+        -
+          name: 'quantity[lt]'
+          in: query
+          required: false
+          type: string
+        -
+          name: 'quantity[lte]'
+          in: query
+          required: false
+          type: string
+        -
+          name: isAvailable
+          in: query
+          required: false
+          type: boolean
+        -
+          name: page
+          in: query
+          required: false
+          description: 'The collection page number'
+          type: integer
+    post:
+      tags:
+        - products
+      operationId: postProductsCollection
+      consumes:
+        - application/json
+        - text/html
+      produces:
+        - application/json
+        - text/html
+      summary: 'Creates a products resource.'
+      responses:
+        201:
+          description: 'products resource created'
+          schema:
+            $ref: '#/definitions/products-Read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+        422:
+          description: 'Unprocessable entity'
+      parameters:
+        -
+          name: products
+          in: body
+          description: 'The new products resource'
+          schema:
+            $ref: '#/definitions/products-Write'
+  '/api/products/{id}':
+    get:
+      tags:
+        - products
+      operationId: getProductsItem
+      produces:
+        - application/json
+        - text/html
+      summary: 'Retrieves a products resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: 'products resource response'
+          schema:
+            $ref: '#/definitions/products-Read'
+        404:
+          description: 'Resource not found'
+    put:
+      tags:
+        - products
+      operationId: putProductsItem
+      consumes:
+        - application/json
+        - text/html
+      produces:
+        - application/json
+        - text/html
+      summary: 'Replaces the products resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          type: string
+        -
+          name: products
+          in: body
+          description: 'The updated products resource'
+          schema:
+            $ref: '#/definitions/products-Write'
+      responses:
+        200:
+          description: 'products resource updated'
+          schema:
+            $ref: '#/definitions/products-Read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+        422:
+          description: 'Unprocessable entity'
+    delete:
+      tags:
+        - products
+      operationId: deleteProductsItem
+      summary: 'Removes the products resource.'
+      responses:
+        204:
+          description: 'products resource deleted'
+        404:
+          description: 'Resource not found'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          type: string
+  /api/users:
+    get:
+      tags:
+        - User
+      operationId: getUserCollection
+      produces:
+        - application/json
+        - text/html
+      summary: 'Retrieves the collection of User resources.'
+      responses:
+        200:
+          description: 'User collection response'
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User-user.read'
+      parameters:
+        -
+          name: page
+          in: query
+          required: false
+          description: 'The collection page number'
+          type: integer
+    post:
+      tags:
+        - User
+      operationId: postUserCollection
+      consumes:
+        - application/json
+        - text/html
+      produces:
+        - application/json
+        - text/html
+      summary: 'Creates a User resource.'
+      responses:
+        201:
+          description: 'User resource created'
+          schema:
+            $ref: '#/definitions/User-user.read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+        422:
+          description: 'Unprocessable entity'
+      parameters:
+        -
+          name: user
+          in: body
+          description: 'The new User resource'
+          schema:
+            $ref: '#/definitions/User-user.write'
+  '/api/users/{id}':
+    get:
+      tags:
+        - User
+      operationId: getUserItem
+      produces:
+        - application/json
+        - text/html
+      summary: 'Retrieves a User resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: 'User resource response'
+          schema:
+            $ref: '#/definitions/User-user.read'
+        404:
+          description: 'Resource not found'
+    delete:
+      tags:
+        - User
+      operationId: deleteUserItem
+      summary: 'Removes the User resource.'
+      responses:
+        204:
+          description: 'User resource deleted'
+        404:
+          description: 'Resource not found'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          type: string
+    put:
+      tags:
+        - User
+      operationId: putUserItem
+      consumes:
+        - application/json
+        - text/html
+      produces:
+        - application/json
+        - text/html
+      summary: 'Replaces the User resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          type: string
+        -
+          name: user
+          in: body
+          description: 'The updated User resource'
+          schema:
+            $ref: '#/definitions/User-user.write'
+      responses:
+        200:
+          description: 'User resource updated'
+          schema:
+            $ref: '#/definitions/User-user.read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+        422:
+          description: 'Unprocessable entity'
+    patch:
+      tags:
+        - User
+      operationId: patchUserItem
+      summary: 'Updates the User resource.'
+      consumes:
+        - application/merge-patch+json
+      produces:
+        - application/json
+        - text/html
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          type: string
+        -
+          name: user
+          in: body
+          description: 'The updated User resource'
+          schema:
+            $ref: '#/definitions/User-user.write'
+      responses:
+        200:
+          description: 'User resource updated'
+          schema:
+            $ref: '#/definitions/User-user.read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+        422:
+          description: 'Unprocessable entity'
+definitions:
+  Categories-Read:
+    type: object
+    description: ''
+    properties:
+      name:
+        type: string
+      slug:
+        type: string
+      parentCategory:
+        $ref: '#/definitions/Categories-Read'
+  Categories-Write:
+    type: object
+    description: ''
+    properties:
+      name:
+        type: string
+      slug:
+        type: string
+      parentCategory:
+        $ref: '#/definitions/Categories-Write'
+  Characteristic-Read:
+    type: object
+    description: ''
+    properties:
+      id:
+        readOnly: true
+        type: integer
+      name:
+        type: string
+      value:
+        type: string
+      numiscornerCharacteristicId:
+        type: integer
+  Characteristic-Write:
+    type: object
+    description: ''
+    properties:
+      id:
+        readOnly: true
+        type: integer
+      name:
+        type: string
+      value:
+        type: string
+      numiscornerCharacteristicId:
+        type: integer
+  User-user.read:
+    type: object
+    description: ''
+    required:
+      - username
+    properties:
+      username:
+        type: string
+  User-user.write:
+    type: object
+    description: ''
+    required:
+      - username
+    properties:
+      username:
+        type: string
+      password:
+        description: 'The hashed password'
+        type: string
+  product-type-Read:
+    type: object
+    description: ''
+    required:
+      - name
+    properties:
+      name:
+        type: string
+  product-type-Write:
+    type: object
+    description: ''
+    required:
+      - name
+    properties:
+      name:
+        type: string
+  products-Read:
+    type: object
+    description: ''
+    properties:
+      id:
+        readOnly: true
+        type: integer
+      sku:
+        type: string
+      title:
+        type: string
+      productType:
+        $ref: '#/definitions/product-type-Read'
+      price:
+        type: string
+      quantity:
+        type: integer
+      imageRecto:
+        type: string
+      imageVerso:
+        type: string
+      category:
+        $ref: '#/definitions/Categories-Read'
+      isAvailable:
+        type: boolean
+      description:
+        type: string
+      characteristics:
+        type: array
+        items:
+          $ref: '#/definitions/Characteristic-Read'
+    required:
+      - sku
+      - title
+      - price
+      - imageRecto
+      - imageVerso
+  products-Write:
+    type: object
+    description: ''
+    required:
+      - sku
+      - title
+      - price
+      - imageRecto
+      - imageVerso
+    properties:
+      sku:
+        type: string
+      title:
+        type: string
+      productType:
+        type: string
+        format: iri-reference
+      price:
+        type: string
+      quantity:
+        type: integer
+      imageRecto:
+        type: string
+      imageVerso:
+        type: string
+      category:
+        type: string
+        format: iri-reference
+      isAvailable:
+        type: boolean
+      description:
+        type: string
+      characteristics:
+        type: array
+        items:
+          $ref: '#/definitions/Characteristic-Write'
