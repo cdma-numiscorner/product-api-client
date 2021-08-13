@@ -723,6 +723,9 @@ definitions:
         type: string
       value:
         type: string
+      product:
+        type: string
+        format: iri-reference
       numiscornerCharacteristicId:
         type: integer
   User-user.read:
@@ -832,4 +835,5 @@ definitions:
       characteristics:
         type: array
         items:
-          $ref: '#/definitions/Characteristic-Write'
+          type: string
+          format: iri-reference

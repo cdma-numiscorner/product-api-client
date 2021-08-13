@@ -64,6 +64,7 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'int',
         'name' => 'string',
         'value' => 'string',
+        'product' => 'string',
         'numiscorner_characteristic_id' => 'int'
     ];
 
@@ -78,6 +79,7 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => null,
         'name' => null,
         'value' => null,
+        'product' => 'iri-reference',
         'numiscorner_characteristic_id' => null
     ];
 
@@ -111,6 +113,7 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'id',
         'name' => 'name',
         'value' => 'value',
+        'product' => 'product',
         'numiscorner_characteristic_id' => 'numiscornerCharacteristicId'
     ];
 
@@ -123,6 +126,7 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'setId',
         'name' => 'setName',
         'value' => 'setValue',
+        'product' => 'setProduct',
         'numiscorner_characteristic_id' => 'setNumiscornerCharacteristicId'
     ];
 
@@ -135,6 +139,7 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'getId',
         'name' => 'getName',
         'value' => 'getValue',
+        'product' => 'getProduct',
         'numiscorner_characteristic_id' => 'getNumiscornerCharacteristicId'
     ];
 
@@ -201,6 +206,7 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['value'] = $data['value'] ?? null;
+        $this->container['product'] = $data['product'] ?? null;
         $this->container['numiscorner_characteristic_id'] = $data['numiscorner_characteristic_id'] ?? null;
     }
 
@@ -296,6 +302,30 @@ class CharacteristicWrite implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setValue($value)
     {
         $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets product
+     *
+     * @return string|null
+     */
+    public function getProduct()
+    {
+        return $this->container['product'];
+    }
+
+    /**
+     * Sets product
+     *
+     * @param string|null $product product
+     *
+     * @return self
+     */
+    public function setProduct($product)
+    {
+        $this->container['product'] = $product;
 
         return $this;
     }
