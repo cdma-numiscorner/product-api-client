@@ -750,11 +750,14 @@ definitions:
   product-type-Read:
     type: object
     description: ''
-    required:
-      - name
     properties:
+      id:
+        readOnly: true
+        type: integer
       name:
         type: string
+    required:
+      - name
   product-type-Write:
     type: object
     description: ''

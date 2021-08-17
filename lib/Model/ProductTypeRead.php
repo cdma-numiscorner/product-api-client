@@ -61,6 +61,7 @@ class ProductTypeRead implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'int',
         'name' => 'string'
     ];
 
@@ -72,6 +73,7 @@ class ProductTypeRead implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'id' => null,
         'name' => null
     ];
 
@@ -102,6 +104,7 @@ class ProductTypeRead implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'name' => 'name'
     ];
 
@@ -111,6 +114,7 @@ class ProductTypeRead implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'name' => 'setName'
     ];
 
@@ -120,6 +124,7 @@ class ProductTypeRead implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'name' => 'getName'
     ];
 
@@ -183,6 +188,7 @@ class ProductTypeRead implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
     }
 
@@ -212,6 +218,30 @@ class ProductTypeRead implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets name
