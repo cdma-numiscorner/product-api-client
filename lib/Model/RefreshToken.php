@@ -1,6 +1,6 @@
 <?php
 /**
- * CharacteristicRead
+ * RefreshToken
  *
  * PHP version 7.2
  *
@@ -31,7 +31,7 @@ use \ArrayAccess;
 use \ProductApi\ObjectSerializer;
 
 /**
- * CharacteristicRead Class Doc Comment
+ * RefreshToken Class Doc Comment
  *
  * @category Class
  * @package  ProductApi
@@ -41,7 +41,7 @@ use \ProductApi\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializable
+class RefreshToken implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Characteristic-Read';
+    protected static $openAPIModelName = 'RefreshToken';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,10 +58,7 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'value' => 'string',
-        'numiscorner_characteristic_id' => 'int'
+        'refresh_token' => 'string'
     ];
 
     /**
@@ -72,10 +69,7 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'value' => null,
-        'numiscorner_characteristic_id' => null
+        'refresh_token' => null
     ];
 
     /**
@@ -105,10 +99,7 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'value' => 'value',
-        'numiscorner_characteristic_id' => 'numiscornerCharacteristicId'
+        'refresh_token' => 'refresh_token'
     ];
 
     /**
@@ -117,10 +108,7 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'value' => 'setValue',
-        'numiscorner_characteristic_id' => 'setNumiscornerCharacteristicId'
+        'refresh_token' => 'setRefreshToken'
     ];
 
     /**
@@ -129,10 +117,7 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'value' => 'getValue',
-        'numiscorner_characteristic_id' => 'getNumiscornerCharacteristicId'
+        'refresh_token' => 'getRefreshToken'
     ];
 
     /**
@@ -195,10 +180,7 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['value'] = $data['value'] ?? null;
-        $this->container['numiscorner_characteristic_id'] = $data['numiscorner_characteristic_id'] ?? null;
+        $this->container['refresh_token'] = $data['refresh_token'] ?? null;
     }
 
     /**
@@ -226,97 +208,25 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
+     * Gets refresh_token
      *
      * @return string|null
      */
-    public function getName()
+    public function getRefreshToken()
     {
-        return $this->container['name'];
+        return $this->container['refresh_token'];
     }
 
     /**
-     * Sets name
+     * Sets refresh_token
      *
-     * @param string|null $name name
+     * @param string|null $refresh_token refresh_token
      *
      * @return self
      */
-    public function setName($name)
+    public function setRefreshToken($refresh_token)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets value
-     *
-     * @return string|null
-     */
-    public function getValue()
-    {
-        return $this->container['value'];
-    }
-
-    /**
-     * Sets value
-     *
-     * @param string|null $value value
-     *
-     * @return self
-     */
-    public function setValue($value)
-    {
-        $this->container['value'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets numiscorner_characteristic_id
-     *
-     * @return int|null
-     */
-    public function getNumiscornerCharacteristicId()
-    {
-        return $this->container['numiscorner_characteristic_id'];
-    }
-
-    /**
-     * Sets numiscorner_characteristic_id
-     *
-     * @param int|null $numiscorner_characteristic_id numiscorner_characteristic_id
-     *
-     * @return self
-     */
-    public function setNumiscornerCharacteristicId($numiscorner_characteristic_id)
-    {
-        $this->container['numiscorner_characteristic_id'] = $numiscorner_characteristic_id;
+        $this->container['refresh_token'] = $refresh_token;
 
         return $this;
     }

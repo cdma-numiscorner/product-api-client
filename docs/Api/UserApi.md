@@ -4,72 +4,19 @@ All URIs are relative to http://localhost.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteUserItem()**](UserApi.md#deleteUserItem) | **DELETE** /api/users/{id} | Removes the User resource.
 [**getUserCollection()**](UserApi.md#getUserCollection) | **GET** /api/users | Retrieves the collection of User resources.
 [**getUserItem()**](UserApi.md#getUserItem) | **GET** /api/users/{id} | Retrieves a User resource.
-[**patchUserItem()**](UserApi.md#patchUserItem) | **PATCH** /api/users/{id} | Updates the User resource.
 [**postUserCollection()**](UserApi.md#postUserCollection) | **POST** /api/users | Creates a User resource.
 [**putUserItem()**](UserApi.md#putUserItem) | **PUT** /api/users/{id} | Replaces the User resource.
 
-
-## `deleteUserItem()`
-
-```php
-deleteUserItem($id)
-```
-
-Removes the User resource.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new ProductApi\Api\UserApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$id = 'id_example'; // string
-
-try {
-    $apiInstance->deleteUserItem($id);
-} catch (Exception $e) {
-    echo 'Exception when calling UserApi->deleteUserItem: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
 
 ## `getUserCollection()`
 
 ```php
 getUserCollection($page): \ProductApi\Model\UserUserRead[]
 ```
+
+Retrieves the collection of User resources.
 
 Retrieves the collection of User resources.
 
@@ -80,13 +27,19 @@ Retrieves the collection of User resources.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$page = 56; // int | The collection page number
+$page = 1; // int | The collection page number
 
 try {
     $result = $apiInstance->getUserCollection($page);
@@ -100,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The collection page number | [optional]
+ **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
 
@@ -108,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -127,6 +80,8 @@ getUserItem($id): \ProductApi\Model\UserUserRead
 
 Retrieves a User resource.
 
+Retrieves a User resource.
+
 ### Example
 
 ```php
@@ -134,13 +89,19 @@ Retrieves a User resource.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$id = 'id_example'; // string
+$id = 'id_example'; // string | Resource identifier
 
 try {
     $result = $apiInstance->getUserItem($id);
@@ -154,7 +115,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+ **id** | **string**| Resource identifier |
 
 ### Return type
 
@@ -162,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -173,67 +134,13 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `patchUserItem()`
-
-```php
-patchUserItem($id, $user): \ProductApi\Model\UserUserRead
-```
-
-Updates the User resource.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new ProductApi\Api\UserApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$id = 'id_example'; // string
-$user = new \ProductApi\Model\UserUserWrite(); // \ProductApi\Model\UserUserWrite | The updated User resource
-
-try {
-    $result = $apiInstance->patchUserItem($id, $user);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UserApi->patchUserItem: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
- **user** | [**\ProductApi\Model\UserUserWrite**](../Model/UserUserWrite.md)| The updated User resource | [optional]
-
-### Return type
-
-[**\ProductApi\Model\UserUserRead**](../Model/UserUserRead.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/merge-patch+json`
-- **Accept**: `application/json`, `text/html`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `postUserCollection()`
 
 ```php
-postUserCollection($user): \ProductApi\Model\UserUserRead
+postUserCollection($user_user_write): \ProductApi\Model\UserUserRead
 ```
+
+Creates a User resource.
 
 Creates a User resource.
 
@@ -244,16 +151,22 @@ Creates a User resource.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$user = new \ProductApi\Model\UserUserWrite(); // \ProductApi\Model\UserUserWrite | The new User resource
+$user_user_write = new \ProductApi\Model\UserUserWrite(); // \ProductApi\Model\UserUserWrite | The new User resource
 
 try {
-    $result = $apiInstance->postUserCollection($user);
+    $result = $apiInstance->postUserCollection($user_user_write);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->postUserCollection: ', $e->getMessage(), PHP_EOL;
@@ -264,7 +177,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | [**\ProductApi\Model\UserUserWrite**](../Model/UserUserWrite.md)| The new User resource | [optional]
+ **user_user_write** | [**\ProductApi\Model\UserUserWrite**](../Model/UserUserWrite.md)| The new User resource |
 
 ### Return type
 
@@ -272,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -286,8 +199,10 @@ No authorization required
 ## `putUserItem()`
 
 ```php
-putUserItem($id, $user): \ProductApi\Model\UserUserRead
+putUserItem($id, $user_user_write): \ProductApi\Model\UserUserRead
 ```
+
+Replaces the User resource.
 
 Replaces the User resource.
 
@@ -298,17 +213,23 @@ Replaces the User resource.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$id = 'id_example'; // string
-$user = new \ProductApi\Model\UserUserWrite(); // \ProductApi\Model\UserUserWrite | The updated User resource
+$id = 'id_example'; // string | Resource identifier
+$user_user_write = new \ProductApi\Model\UserUserWrite(); // \ProductApi\Model\UserUserWrite | The updated User resource
 
 try {
-    $result = $apiInstance->putUserItem($id, $user);
+    $result = $apiInstance->putUserItem($id, $user_user_write);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->putUserItem: ', $e->getMessage(), PHP_EOL;
@@ -319,8 +240,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
- **user** | [**\ProductApi\Model\UserUserWrite**](../Model/UserUserWrite.md)| The updated User resource | [optional]
+ **id** | **string**| Resource identifier |
+ **user_user_write** | [**\ProductApi\Model\UserUserWrite**](../Model/UserUserWrite.md)| The updated User resource |
 
 ### Return type
 
@@ -328,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 

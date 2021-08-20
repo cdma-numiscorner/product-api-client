@@ -19,6 +19,8 @@ deleteCharacteristicItem($id)
 
 Removes the Characteristic resource.
 
+Removes the Characteristic resource.
+
 ### Example
 
 ```php
@@ -26,13 +28,19 @@ Removes the Characteristic resource.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\CharacteristicApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$id = 'id_example'; // string
+$id = 'id_example'; // string | Resource identifier
 
 try {
     $apiInstance->deleteCharacteristicItem($id);
@@ -45,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+ **id** | **string**| Resource identifier |
 
 ### Return type
 
@@ -53,7 +61,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -72,6 +80,8 @@ getCharacteristicCollection($page): \ProductApi\Model\CharacteristicRead[]
 
 Retrieves the collection of Characteristic resources.
 
+Retrieves the collection of Characteristic resources.
+
 ### Example
 
 ```php
@@ -79,13 +89,19 @@ Retrieves the collection of Characteristic resources.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\CharacteristicApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$page = 56; // int | The collection page number
+$page = 1; // int | The collection page number
 
 try {
     $result = $apiInstance->getCharacteristicCollection($page);
@@ -99,7 +115,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The collection page number | [optional]
+ **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
 
@@ -107,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -126,6 +142,8 @@ getCharacteristicItem($id): \ProductApi\Model\CharacteristicRead
 
 Retrieves a Characteristic resource.
 
+Retrieves a Characteristic resource.
+
 ### Example
 
 ```php
@@ -133,13 +151,19 @@ Retrieves a Characteristic resource.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\CharacteristicApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$id = 'id_example'; // string
+$id = 'id_example'; // string | Resource identifier
 
 try {
     $result = $apiInstance->getCharacteristicItem($id);
@@ -153,7 +177,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+ **id** | **string**| Resource identifier |
 
 ### Return type
 
@@ -161,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -175,8 +199,10 @@ No authorization required
 ## `postCharacteristicCollection()`
 
 ```php
-postCharacteristicCollection($characteristic): \ProductApi\Model\CharacteristicRead
+postCharacteristicCollection($characteristic_write): \ProductApi\Model\CharacteristicRead
 ```
+
+Creates a Characteristic resource.
 
 Creates a Characteristic resource.
 
@@ -187,16 +213,22 @@ Creates a Characteristic resource.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\CharacteristicApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$characteristic = new \ProductApi\Model\CharacteristicWrite(); // \ProductApi\Model\CharacteristicWrite | The new Characteristic resource
+$characteristic_write = new \ProductApi\Model\CharacteristicWrite(); // \ProductApi\Model\CharacteristicWrite | The new Characteristic resource
 
 try {
-    $result = $apiInstance->postCharacteristicCollection($characteristic);
+    $result = $apiInstance->postCharacteristicCollection($characteristic_write);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CharacteristicApi->postCharacteristicCollection: ', $e->getMessage(), PHP_EOL;
@@ -207,7 +239,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characteristic** | [**\ProductApi\Model\CharacteristicWrite**](../Model/CharacteristicWrite.md)| The new Characteristic resource | [optional]
+ **characteristic_write** | [**\ProductApi\Model\CharacteristicWrite**](../Model/CharacteristicWrite.md)| The new Characteristic resource |
 
 ### Return type
 
@@ -215,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -229,8 +261,10 @@ No authorization required
 ## `putCharacteristicItem()`
 
 ```php
-putCharacteristicItem($id, $characteristic): \ProductApi\Model\CharacteristicRead
+putCharacteristicItem($id, $characteristic_write): \ProductApi\Model\CharacteristicRead
 ```
+
+Replaces the Characteristic resource.
 
 Replaces the Characteristic resource.
 
@@ -241,17 +275,23 @@ Replaces the Characteristic resource.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\CharacteristicApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$id = 'id_example'; // string
-$characteristic = new \ProductApi\Model\CharacteristicWrite(); // \ProductApi\Model\CharacteristicWrite | The updated Characteristic resource
+$id = 'id_example'; // string | Resource identifier
+$characteristic_write = new \ProductApi\Model\CharacteristicWrite(); // \ProductApi\Model\CharacteristicWrite | The updated Characteristic resource
 
 try {
-    $result = $apiInstance->putCharacteristicItem($id, $characteristic);
+    $result = $apiInstance->putCharacteristicItem($id, $characteristic_write);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CharacteristicApi->putCharacteristicItem: ', $e->getMessage(), PHP_EOL;
@@ -262,8 +302,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
- **characteristic** | [**\ProductApi\Model\CharacteristicWrite**](../Model/CharacteristicWrite.md)| The updated Characteristic resource | [optional]
+ **id** | **string**| Resource identifier |
+ **characteristic_write** | [**\ProductApi\Model\CharacteristicWrite**](../Model/CharacteristicWrite.md)| The updated Characteristic resource |
 
 ### Return type
 
@@ -271,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 

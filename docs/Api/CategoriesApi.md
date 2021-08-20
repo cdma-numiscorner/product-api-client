@@ -18,6 +18,8 @@ getCategoriesCollection($page): \ProductApi\Model\CategoriesRead[]
 
 Retrieves the collection of Categories resources.
 
+Retrieves the collection of Categories resources.
+
 ### Example
 
 ```php
@@ -25,13 +27,19 @@ Retrieves the collection of Categories resources.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\CategoriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$page = 56; // int | The collection page number
+$page = 1; // int | The collection page number
 
 try {
     $result = $apiInstance->getCategoriesCollection($page);
@@ -45,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The collection page number | [optional]
+ **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
 
@@ -53,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -72,6 +80,8 @@ getCategoriesItem($id): \ProductApi\Model\CategoriesRead
 
 Retrieves a Categories resource.
 
+Retrieves a Categories resource.
+
 ### Example
 
 ```php
@@ -79,13 +89,19 @@ Retrieves a Categories resource.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\CategoriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$id = 'id_example'; // string
+$id = 'id_example'; // string | Resource identifier
 
 try {
     $result = $apiInstance->getCategoriesItem($id);
@@ -99,7 +115,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+ **id** | **string**| Resource identifier |
 
 ### Return type
 
@@ -107,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -121,8 +137,10 @@ No authorization required
 ## `postCategoriesCollection()`
 
 ```php
-postCategoriesCollection($categories): \ProductApi\Model\CategoriesRead
+postCategoriesCollection($categories_write): \ProductApi\Model\CategoriesRead
 ```
+
+Creates a Categories resource.
 
 Creates a Categories resource.
 
@@ -133,16 +151,22 @@ Creates a Categories resource.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\CategoriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$categories = new \ProductApi\Model\CategoriesWrite(); // \ProductApi\Model\CategoriesWrite | The new Categories resource
+$categories_write = new \ProductApi\Model\CategoriesWrite(); // \ProductApi\Model\CategoriesWrite | The new Categories resource
 
 try {
-    $result = $apiInstance->postCategoriesCollection($categories);
+    $result = $apiInstance->postCategoriesCollection($categories_write);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoriesApi->postCategoriesCollection: ', $e->getMessage(), PHP_EOL;
@@ -153,7 +177,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categories** | [**\ProductApi\Model\CategoriesWrite**](../Model/CategoriesWrite.md)| The new Categories resource | [optional]
+ **categories_write** | [**\ProductApi\Model\CategoriesWrite**](../Model/CategoriesWrite.md)| The new Categories resource |
 
 ### Return type
 
@@ -161,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -175,8 +199,10 @@ No authorization required
 ## `putCategoriesItem()`
 
 ```php
-putCategoriesItem($id, $categories): \ProductApi\Model\CategoriesRead
+putCategoriesItem($id, $categories_write): \ProductApi\Model\CategoriesRead
 ```
+
+Replaces the Categories resource.
 
 Replaces the Categories resource.
 
@@ -187,17 +213,23 @@ Replaces the Categories resource.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\CategoriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$id = 'id_example'; // string
-$categories = new \ProductApi\Model\CategoriesWrite(); // \ProductApi\Model\CategoriesWrite | The updated Categories resource
+$id = 'id_example'; // string | Resource identifier
+$categories_write = new \ProductApi\Model\CategoriesWrite(); // \ProductApi\Model\CategoriesWrite | The updated Categories resource
 
 try {
-    $result = $apiInstance->putCategoriesItem($id, $categories);
+    $result = $apiInstance->putCategoriesItem($id, $categories_write);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoriesApi->putCategoriesItem: ', $e->getMessage(), PHP_EOL;
@@ -208,8 +240,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
- **categories** | [**\ProductApi\Model\CategoriesWrite**](../Model/CategoriesWrite.md)| The updated Categories resource | [optional]
+ **id** | **string**| Resource identifier |
+ **categories_write** | [**\ProductApi\Model\CategoriesWrite**](../Model/CategoriesWrite.md)| The updated Categories resource |
 
 ### Return type
 
@@ -217,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 

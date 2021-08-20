@@ -1,10 +1,10 @@
-# # UserUserWrite
+# # Token
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**username** | **string** |  |
-**password** | **mixed** |  | [optional]
+**token** | **string** |  | [optional] [readonly]
+**refresh_token** | **string** |  | [optional] [readonly]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

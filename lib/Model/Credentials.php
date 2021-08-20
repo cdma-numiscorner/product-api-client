@@ -1,6 +1,6 @@
 <?php
 /**
- * CharacteristicRead
+ * Credentials
  *
  * PHP version 7.2
  *
@@ -31,7 +31,7 @@ use \ArrayAccess;
 use \ProductApi\ObjectSerializer;
 
 /**
- * CharacteristicRead Class Doc Comment
+ * Credentials Class Doc Comment
  *
  * @category Class
  * @package  ProductApi
@@ -41,7 +41,7 @@ use \ProductApi\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializable
+class Credentials implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Characteristic-Read';
+    protected static $openAPIModelName = 'Credentials';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,10 +58,8 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'value' => 'string',
-        'numiscorner_characteristic_id' => 'int'
+        'username' => 'string',
+        'password' => 'string'
     ];
 
     /**
@@ -72,10 +70,8 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'value' => null,
-        'numiscorner_characteristic_id' => null
+        'username' => null,
+        'password' => null
     ];
 
     /**
@@ -105,10 +101,8 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'value' => 'value',
-        'numiscorner_characteristic_id' => 'numiscornerCharacteristicId'
+        'username' => 'username',
+        'password' => 'password'
     ];
 
     /**
@@ -117,10 +111,8 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'value' => 'setValue',
-        'numiscorner_characteristic_id' => 'setNumiscornerCharacteristicId'
+        'username' => 'setUsername',
+        'password' => 'setPassword'
     ];
 
     /**
@@ -129,10 +121,8 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'value' => 'getValue',
-        'numiscorner_characteristic_id' => 'getNumiscornerCharacteristicId'
+        'username' => 'getUsername',
+        'password' => 'getPassword'
     ];
 
     /**
@@ -195,10 +185,8 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['value'] = $data['value'] ?? null;
-        $this->container['numiscorner_characteristic_id'] = $data['numiscorner_characteristic_id'] ?? null;
+        $this->container['username'] = $data['username'] ?? null;
+        $this->container['password'] = $data['password'] ?? null;
     }
 
     /**
@@ -226,97 +214,49 @@ class CharacteristicRead implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
+     * Gets username
      *
      * @return string|null
      */
-    public function getName()
+    public function getUsername()
     {
-        return $this->container['name'];
+        return $this->container['username'];
     }
 
     /**
-     * Sets name
+     * Sets username
      *
-     * @param string|null $name name
+     * @param string|null $username username
      *
      * @return self
      */
-    public function setName($name)
+    public function setUsername($username)
     {
-        $this->container['name'] = $name;
+        $this->container['username'] = $username;
 
         return $this;
     }
 
     /**
-     * Gets value
+     * Gets password
      *
      * @return string|null
      */
-    public function getValue()
+    public function getPassword()
     {
-        return $this->container['value'];
+        return $this->container['password'];
     }
 
     /**
-     * Sets value
+     * Sets password
      *
-     * @param string|null $value value
+     * @param string|null $password password
      *
      * @return self
      */
-    public function setValue($value)
+    public function setPassword($password)
     {
-        $this->container['value'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets numiscorner_characteristic_id
-     *
-     * @return int|null
-     */
-    public function getNumiscornerCharacteristicId()
-    {
-        return $this->container['numiscorner_characteristic_id'];
-    }
-
-    /**
-     * Sets numiscorner_characteristic_id
-     *
-     * @param int|null $numiscorner_characteristic_id numiscorner_characteristic_id
-     *
-     * @return self
-     */
-    public function setNumiscornerCharacteristicId($numiscorner_characteristic_id)
-    {
-        $this->container['numiscorner_characteristic_id'] = $numiscorner_characteristic_id;
+        $this->container['password'] = $password;
 
         return $this;
     }

@@ -18,6 +18,8 @@ getProductTypeCollection($page): \ProductApi\Model\ProductTypeRead[]
 
 Retrieves the collection of product-type resources.
 
+Retrieves the collection of product-type resources.
+
 ### Example
 
 ```php
@@ -25,13 +27,19 @@ Retrieves the collection of product-type resources.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\ProductTypeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$page = 56; // int | The collection page number
+$page = 1; // int | The collection page number
 
 try {
     $result = $apiInstance->getProductTypeCollection($page);
@@ -45,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The collection page number | [optional]
+ **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
 
@@ -53,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -72,6 +80,8 @@ getProductTypeItem($id): \ProductApi\Model\ProductTypeRead
 
 Retrieves a product-type resource.
 
+Retrieves a product-type resource.
+
 ### Example
 
 ```php
@@ -79,13 +89,19 @@ Retrieves a product-type resource.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\ProductTypeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$id = 'id_example'; // string
+$id = 'id_example'; // string | Resource identifier
 
 try {
     $result = $apiInstance->getProductTypeItem($id);
@@ -99,7 +115,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+ **id** | **string**| Resource identifier |
 
 ### Return type
 
@@ -107,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -121,8 +137,10 @@ No authorization required
 ## `postProductTypeCollection()`
 
 ```php
-postProductTypeCollection($product_type): \ProductApi\Model\ProductTypeRead
+postProductTypeCollection($product_type_write): \ProductApi\Model\ProductTypeRead
 ```
+
+Creates a product-type resource.
 
 Creates a product-type resource.
 
@@ -133,16 +151,22 @@ Creates a product-type resource.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\ProductTypeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$product_type = new \ProductApi\Model\ProductTypeWrite(); // \ProductApi\Model\ProductTypeWrite | The new product-type resource
+$product_type_write = new \ProductApi\Model\ProductTypeWrite(); // \ProductApi\Model\ProductTypeWrite | The new product-type resource
 
 try {
-    $result = $apiInstance->postProductTypeCollection($product_type);
+    $result = $apiInstance->postProductTypeCollection($product_type_write);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductTypeApi->postProductTypeCollection: ', $e->getMessage(), PHP_EOL;
@@ -153,7 +177,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_type** | [**\ProductApi\Model\ProductTypeWrite**](../Model/ProductTypeWrite.md)| The new product-type resource | [optional]
+ **product_type_write** | [**\ProductApi\Model\ProductTypeWrite**](../Model/ProductTypeWrite.md)| The new product-type resource |
 
 ### Return type
 
@@ -161,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -175,8 +199,10 @@ No authorization required
 ## `putProductTypeItem()`
 
 ```php
-putProductTypeItem($id, $product_type): \ProductApi\Model\ProductTypeRead
+putProductTypeItem($id, $product_type_write): \ProductApi\Model\ProductTypeRead
 ```
+
+Replaces the product-type resource.
 
 Replaces the product-type resource.
 
@@ -187,17 +213,23 @@ Replaces the product-type resource.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: apiKey
+$config = ProductApi\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ProductApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new ProductApi\Api\ProductTypeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$id = 'id_example'; // string
-$product_type = new \ProductApi\Model\ProductTypeWrite(); // \ProductApi\Model\ProductTypeWrite | The updated product-type resource
+$id = 'id_example'; // string | Resource identifier
+$product_type_write = new \ProductApi\Model\ProductTypeWrite(); // \ProductApi\Model\ProductTypeWrite | The updated product-type resource
 
 try {
-    $result = $apiInstance->putProductTypeItem($id, $product_type);
+    $result = $apiInstance->putProductTypeItem($id, $product_type_write);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductTypeApi->putProductTypeItem: ', $e->getMessage(), PHP_EOL;
@@ -208,8 +240,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
- **product_type** | [**\ProductApi\Model\ProductTypeWrite**](../Model/ProductTypeWrite.md)| The updated product-type resource | [optional]
+ **id** | **string**| Resource identifier |
+ **product_type_write** | [**\ProductApi\Model\ProductTypeWrite**](../Model/ProductTypeWrite.md)| The updated product-type resource |
 
 ### Return type
 
@@ -217,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../../README.md#apiKey)
 
 ### HTTP request headers
 

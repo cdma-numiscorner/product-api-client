@@ -1,6 +1,6 @@
 {
-    "name": "cdma-numiscorner/etsy-api-client-php",
-    "description": "Use the Product API to export products.",
+    "name": "GIT_USER_ID/GIT_REPO_ID",
+    "description": "# Authentication  <!-- ReDoc-Inject: <security-definitions> -->",
     "keywords": [
         "openapitools",
         "openapi-generator",

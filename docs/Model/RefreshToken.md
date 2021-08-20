@@ -1,10 +1,9 @@
-# # UserUserWrite
+# # RefreshToken
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**username** | **string** |  |
-**password** | **mixed** |  | [optional]
+**refresh_token** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
